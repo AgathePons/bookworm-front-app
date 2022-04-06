@@ -1,10 +1,9 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { changeUserLoginField } from 'src/actions/user';
-import { createAccount } from '../../apiRequests';
+import { changeUserFormsField, registerUser } from 'src/actions/user';
 
 import './style.css';
 
-function UserForm({ handleSubmit }) {
+function UserForm() {
   const {
     loginEmail,
     loginPassword,
@@ -17,18 +16,18 @@ function UserForm({ handleSubmit }) {
   const dispatch = useDispatch();
 
   const handleInputChange = (event) => {
-    dispatch(changeUserLoginField(event.target.value, event.target.name));
+    dispatch(changeUserFormsField(event.target.value, event.target.name));
   };
-
+  //                   !!!!!!!!!!!!              //
   const handleLoginSubmit = (event) => {
     event.preventDefault();
   };
 
   const handleRegisterSubmit = (event) => {
     event.preventDefault();
-    handleSubmit();
+    dispatch(registerUser());
   };
-
+  //                 !!!!!!!!        fin //
   return (
     <>
       <div className="user__login">

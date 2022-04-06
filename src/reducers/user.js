@@ -1,4 +1,4 @@
-import { CHANGE_USER_LOGIN_FIELD } from 'src/actions/user';
+import { CHANGE_USER_FORMS_FIELD } from 'src/actions/user';
 
 export const initialState = {
   isLogged: false,
@@ -13,7 +13,7 @@ export const initialState = {
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case CHANGE_USER_LOGIN_FIELD: {
+    case CHANGE_USER_FORMS_FIELD: {
       return {
         ...state,
         [action.name]: action.value,
