@@ -1,0 +1,14 @@
+.bookworm {
+  background-color: red;
+  padding: 2rem 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.bookworm-hidden {
+  display: none;
+}

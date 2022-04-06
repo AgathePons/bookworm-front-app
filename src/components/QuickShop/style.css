@@ -1,0 +1,38 @@
+.quickshop {
+  background-color: cyan;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.quickshop__block {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 37%;
+  background-color: chartreuse;
+
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+
+.snaps-inline {
+  scroll-snap-type: inline mandatory;
+  scroll-padding-inline: 1rem;
+}
+
+.snaps-inline > * {
+  scroll-snap-align: start;
+}
+
+.quickshop__block__item {
+  background-color: orange;
+  min-width: 50px;
+  min-height: 50px;
+  margin: 0.5rem;
+  border: 1px solid black;
+}
+
+@media screen and (min-width: 1366px) {
+  .quickshop {
+    display: none;
+  }
+}

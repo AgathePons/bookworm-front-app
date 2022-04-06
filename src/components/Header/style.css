@@ -1,0 +1,22 @@
+.header {
+  background-color: chartreuse;
+  width: 100%;
+  padding: 1rem;
+}
+
+.header:nth-child(1) {
+  font-size: 1.5rem;
+}
+.header:nth-child(2) {
+  font-size: 0.5rem;
+}
+
+@media screen and (min-width: 1366px) {
+  .header {
+    width: 20%;
+    margin-left: 1rem;
+  }
+  .header:last-child {
+    display: none;
+  }
+}
