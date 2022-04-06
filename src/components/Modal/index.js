@@ -8,7 +8,7 @@ import User from '../User';
 import './style.css';
 
 function Modal({
-  title, setIsOpen, isOpen, handlePlayerId,
+  title, setIsOpen, isOpen
 }) {
   function handleClick() {
     setIsOpen(false);
@@ -19,7 +19,7 @@ function Modal({
       <div className={isOpen ? 'modal' : 'modal modal-hidden'}>
         <div className="modal__header">
           <h2 className="modal__header__title">{title}</h2>
-          <button className="modal__header__closeBtn" onClick={handleClick}>
+          <button type="button" className="modal__header__closeBtn" onClick={handleClick}>
             X
           </button>
         </div>
@@ -31,7 +31,7 @@ function Modal({
           {/* {title === 'shop' ? <Shop /> : null} */}
           <Shop isOpen={title === 'shop' || null} />
           {/* {title === 'user' ? <User /> : null} */}
-          <User isOpen={title === 'user' || null} handlePlayerId={handlePlayerId} />
+          <User isOpen={title === 'user' || null} />
         </div>
       </div>
     </div>

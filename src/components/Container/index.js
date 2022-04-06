@@ -5,10 +5,10 @@ import Buttons from '../Buttons';
 // assets import
 import './style.css';
 
-function Container({ visible, handleClick, handlePlayerId }) {
+function Container({ visible, handleClick }) {
   return (
     <div className="container">
-      <Buttons handlePlayerId={handlePlayerId} />
+      <Buttons />
       <QuickShop visible={visible} handleClick={handleClick} />
     </div>
   );

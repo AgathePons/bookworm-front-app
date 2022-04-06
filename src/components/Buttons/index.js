@@ -7,7 +7,7 @@ import Modal from '../Modal';
 // assets import
 import './style.css';
 
-function Buttons({ handlePlayerId }) {
+function Buttons() {
   const [isOpen, setIsOpen] = useState(false);
   const [title, setTitle] = useState('');
 
@@ -25,7 +25,7 @@ function Buttons({ handlePlayerId }) {
         <button onClick={handleClick} type="button" className="buttons__c" value="shop">C</button>
         <button onClick={handleClick} type="button" className="buttons__d" value="stats">D</button>
       </div>
-      <Modal title={title} setIsOpen={setIsOpen} isOpen={isOpen} handlePlayerId={handlePlayerId} />
+      <Modal title={title} setIsOpen={setIsOpen} isOpen={isOpen} />
     </div>
   );
 }

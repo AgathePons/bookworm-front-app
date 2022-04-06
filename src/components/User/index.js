@@ -5,17 +5,19 @@ import UserInfo from '../UserInfo';
 
 import './style.css';
 
-const User = ({ isOpen, handlePlayerId }) => {
-
+function User({ isOpen }) {
   const [logged, setLogged] = useState(false);
 
   const handleSubmit = () => {
-    setLogged(true)
-  }
+    setLogged(true);
+  };
 
   return (
-    <div className={isOpen ? "user" : "user-hidden"}>
-      {logged ? <UserInfo /> : <UserForm handleSubmit={handleSubmit} handlePlayerId={handlePlayerId} />}
+    <div className={isOpen ? 'user' : 'user-hidden'}>
+      {
+        logged
+          ? <UserInfo /> : <UserForm handleSubmit={handleSubmit} />
+      }
     </div>
   );
 }
