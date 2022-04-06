@@ -1,3 +1,6 @@
+// npm import 
+import PropTypes from 'prop-types';
+
 // components import
 import Bookworm from '../Bookworm';
 import Stats from '../Stats';
@@ -7,7 +10,7 @@ import User from '../User';
 // assets import
 import './style.css';
 
-function Modal({
+export default function Modal({
   title, setIsOpen, isOpen, handlePlayerId,
 }) {
   function handleClick() {
@@ -19,23 +22,24 @@ function Modal({
       <div className={isOpen ? 'modal' : 'modal modal-hidden'}>
         <div className="modal__header">
           <h2 className="modal__header__title">{title}</h2>
-          <button className="modal__header__closeBtn" onClick={handleClick}>
+          <button type="button" className="modal__header__closeBtn" onClick={handleClick}>
             X
           </button>
         </div>
         <div className="modal__content">
-          {/* {title === 'bookworm' ? <Bookworm isOpen={isOpen}/> : <Bookworm isOpen={null} />} */}
-          <Bookworm isOpen={title === 'bookworm' || null} />
-          {/* {title === 'stats' ? <Stats totalKnowledge={123} totalClicks={456} knowledgePerSecond={321} knowledgePerClick={789} /> : null} */}
-          <Stats totalKnowledge={123} totalClicks={456} knowledgePerSecond={321} knowledgePerClick={789} isOpen={title === 'stats' || null} />
-          {/* {title === 'shop' ? <Shop /> : null} */}
-          <Shop isOpen={title === 'shop' || null} />
-          {/* {title === 'user' ? <User /> : null} */}
-          <User isOpen={title === 'user' || null} handlePlayerId={handlePlayerId} />
+          <Bookworm isOpen={title === 'bookworm'} />
+          <Stats totalKnowledge={123} totalClicks={456} knowledgePerSecond={321} knowledgePerClick={789} isOpen={title === 'stats'} />
+          <Shop isOpen={title === 'shop'} />
+          <User isOpen={title === 'user'} handlePlayerId={handlePlayerId} />
         </div>
       </div>
     </div>
   );
 }
 
-export default Modal;
+Modal.propTypes = {
+  title: PropTypes.string.isRequired,
+  setIsOpen: PropTypes.func.isRequired,
+  isOpen: PropTypes.bool.isRequired,
+  handlePlayerId: PropTypes.func.isRequired,
+};

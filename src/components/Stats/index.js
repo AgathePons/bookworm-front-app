@@ -1,6 +1,10 @@
+// npm imports
+import PropTypes from 'prop-types';
+
+// assets imports
 import './style.css';
 
-function Stats({
+export default function Stats({
   totalKnowledge,
   totalClicks,
   knowledgePerSecond,
@@ -59,4 +63,10 @@ function Stats({
   );
 }
 
-export default Stats;
+Stats.propTypes = {
+  totalKnowledge: PropTypes.number.isRequired,
+  totalClicks: PropTypes.number.isRequired,
+  knowledgePerClick: PropTypes.number.isRequired,
+  knowledgePerSecond: PropTypes.number.isRequired,
+  isOpen: PropTypes.bool.isRequired,
+};

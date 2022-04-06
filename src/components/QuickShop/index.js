@@ -1,6 +1,9 @@
+// npm import
+import PropTypes from 'prop-types';
+
 import './style.css';
 
-function QuickShop({ visible, handleClick }) {
+export default function QuickShop({ visible, handleClick }) {
   return (
     <div>
       <div className="quickshop" onClick={handleClick}>
@@ -24,4 +27,7 @@ function QuickShop({ visible, handleClick }) {
   );
 }
 
-export default QuickShop;
+QuickShop.propTypes = {
+  visible: PropTypes.bool.isRequired,
+  handleClick: PropTypes.func.isRequired,
+};

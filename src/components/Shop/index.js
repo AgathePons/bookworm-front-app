@@ -1,5 +1,6 @@
 // npm import
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 // components import
 import ShopItem from '../ShopItem';
@@ -7,7 +8,7 @@ import ShopItem from '../ShopItem';
 // assets import
 import './style.css';
 
-function Shop({ isOpen }) {
+export default function Shop({ isOpen }) {
   const [clicTabSelected, setClicTab] = useState(true);
   const [flatTabSelected, setFlatTab] = useState(true);
 
@@ -25,6 +26,7 @@ function Shop({ isOpen }) {
       case 'percent':
         setFlatTab(false);
         break;
+      default:
     }
   }
 
@@ -48,4 +50,6 @@ function Shop({ isOpen }) {
   );
 }
 
-export default Shop;
+Shop.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+};

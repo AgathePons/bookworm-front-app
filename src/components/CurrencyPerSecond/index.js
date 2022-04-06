@@ -1,7 +1,11 @@
-function CurrencyPerSecond({ idleCounter }) {
+import PropTypes from 'prop-types';
+
+export default function CurrencyPerSecond({ idleCounter }) {
   return (
     <div className="currencypersecond">{idleCounter} per second</div>
   );
 }
 
-export default CurrencyPerSecond;
+CurrencyPerSecond.propTypes = {
+  idleCounter: PropTypes.number.isRequired,
+};

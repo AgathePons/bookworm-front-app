@@ -1,9 +1,14 @@
+// npm imports
+import PropTypes from 'prop-types';
 import { useState } from 'react';
+
+// api import
 import { createAccount } from '../../apiRequests';
 
+// assets import
 import './style.css';
 
-function UserForm({ handleSubmit, handlePlayerId }) {
+export default function UserForm({ handleSubmit, handlePlayerId }) {
   const [loginEmail, setLoginEmail] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
   const [email, setEmail] = useState('');
@@ -31,6 +36,7 @@ function UserForm({ handleSubmit, handlePlayerId }) {
       case 'register_password_confirm':
         setPassordConfirm(e.target.value);
         break;
+      default:
     }
   };
 
@@ -68,4 +74,7 @@ function UserForm({ handleSubmit, handlePlayerId }) {
   );
 }
 
-export default UserForm;
+UserForm.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+  handlePlayerId: PropTypes.func.isRequired,
+};

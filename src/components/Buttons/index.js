@@ -1,5 +1,6 @@
 // npm import
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 // components import
 import Modal from '../Modal';
@@ -7,7 +8,7 @@ import Modal from '../Modal';
 // assets import
 import './style.css';
 
-function Buttons({ handlePlayerId }) {
+export default function Buttons({ handlePlayerId }) {
   const [isOpen, setIsOpen] = useState(false);
   const [title, setTitle] = useState('');
 
@@ -30,4 +31,6 @@ function Buttons({ handlePlayerId }) {
   );
 }
 
-export default Buttons;
+Buttons.propTypes = {
+  handlePlayerId: PropTypes.func.isRequired,
+};

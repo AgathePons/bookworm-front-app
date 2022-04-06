@@ -1,7 +1,11 @@
-function Currency({ counter }) {
+import PropTypes from 'prop-types';
+
+export default function Currency({ counter }) {
   return (
     <div className="currency">{counter}</div>
   );
 }
 
-export default Currency;
+Currency.propTypes = {
+  counter: PropTypes.number.isRequired,
+};
