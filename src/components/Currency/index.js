@@ -1,4 +1,4 @@
-const Currency = ({ counter }) => {
+function Currency({ counter }) {
   return (
     <div className="currency">{counter}</div>
   );

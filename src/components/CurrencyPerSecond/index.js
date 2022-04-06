@@ -1,4 +1,4 @@
-const CurrencyPerSecond = ({ idleCounter }) => {
+function CurrencyPerSecond({ idleCounter }) {
   return (
     <div className="currencypersecond">{idleCounter} per second</div>
   );

@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { addKnowledgePerClick} from 'src/actions/knowledge';
+import { addKnowledgePerClick } from 'src/actions/knowledge';
 
 import book from '../../assets/images/Book.gif';
 

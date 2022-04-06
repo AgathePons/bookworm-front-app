@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 
+import PropTypes from 'prop-types';
+
 import { getFirstSentence, getRandomSentence } from '../../apiRequests';
 
 import useInterval from '../../hooks/useInterval';
@@ -8,7 +10,7 @@ import BookwormMessage from '../BookwormMessage';
 
 import './style.css';
 
-function Bookworm({ isOpen }) {
+export default function Bookworm({ isOpen }) {
   const [messages, setMessages] = useState(['']);
 
   useInterval(() => {
@@ -26,4 +28,6 @@ function Bookworm({ isOpen }) {
   );
 }
 
-export default Bookworm;
+Bookworm.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+};

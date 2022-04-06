@@ -19,10 +19,6 @@ function App() {
     setPlayerId(id);
   };
 
-  // const handleIncrement = () => {
-  //   setCount(count + increment);
-  // };
-
   const handleVisible = () => {
     setVisible(!visible);
   };

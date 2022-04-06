@@ -7,10 +7,9 @@ import Modal from '../Modal';
 // assets import
 import './style.css';
 
-
-const Buttons = ({ handlePlayerId }) => {
+function Buttons({ handlePlayerId }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [title, setTitle] = useState("");
+  const [title, setTitle] = useState('');
 
   function handleClick(e) {
     setTitle(e.target.value);

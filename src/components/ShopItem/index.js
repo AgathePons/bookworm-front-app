@@ -1,6 +1,6 @@
 import './style.css';
 
-const ShopItem = () => {
+function ShopItem() {
   return (
     <div className="shopitem__container">
       <div className="shopitem__left">
