@@ -6,7 +6,7 @@ import './style.css';
 
 export default function Stats({
   totalKnowledge,
-  totalClicks,
+  totalOfClicks,
   knowledgePerSecond,
   knowledgePerClick,
   isOpen,
@@ -18,7 +18,7 @@ export default function Stats({
         <p className="stat__container__block__name">Total knowledge earned:</p>
         <p className="stat__container__block__value">{totalKnowledge}</p>
         <p className="stat__container__block__name">Total clicks:</p>
-        <p className="stat__container__block__value">{totalClicks}</p>
+        <p className="stat__container__block__value">{totalOfClicks}</p>
         <p className="stat__container__block__name">Knowledge per second:</p>
         <p className="stat__container__block__value">{knowledgePerSecond}</p>
         <p className="stat__container__block__name">Knowledge per click:</p>
@@ -65,7 +65,7 @@ export default function Stats({
 
 Stats.propTypes = {
   totalKnowledge: PropTypes.number.isRequired,
-  totalClicks: PropTypes.number.isRequired,
+  totalOfClicks: PropTypes.number.isRequired,
   knowledgePerClick: PropTypes.number.isRequired,
   knowledgePerSecond: PropTypes.number.isRequired,
   isOpen: PropTypes.bool.isRequired,

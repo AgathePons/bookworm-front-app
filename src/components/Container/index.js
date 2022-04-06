@@ -7,10 +7,10 @@ import Buttons from '../Buttons';
 // assets import
 import './style.css';
 
-export default function Container({ visible, handleClick, handlePlayerId }) {
+export default function Container({ visible, handleClick }) {
   return (
     <div className="container">
-      <Buttons handlePlayerId={handlePlayerId} />
+      <Buttons />
       <QuickShop visible={visible} handleClick={handleClick} />
     </div>
   );
@@ -19,5 +19,4 @@ export default function Container({ visible, handleClick, handlePlayerId }) {
 Container.propTypes = {
   visible: PropTypes.bool.isRequired,
   handleClick: PropTypes.func.isRequired,
-  handlePlayerId: PropTypes.func.isRequired,
 };

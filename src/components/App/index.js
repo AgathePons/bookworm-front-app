@@ -13,11 +13,6 @@ import './style.css';
 
 function App() {
   const [visible, setVisible] = useState(false);
-  const [playerId, setPlayerId] = useState(0);
-
-  const handlePlayerId = (id) => {
-    setPlayerId(id);
-  };
 
   const handleVisible = () => {
     setVisible(!visible);
@@ -29,7 +24,7 @@ function App() {
         <Header />
         <Book />
       </div>
-      <Container visible={visible} handleClick={handleVisible} handlePlayerId={handlePlayerId} />
+      <Container visible={visible} handleClick={handleVisible} />
     </div>
   );
 }

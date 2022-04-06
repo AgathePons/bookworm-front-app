@@ -1,5 +1,6 @@
-// npm import 
+// npm import
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 
 // components import
 import Bookworm from '../Bookworm';
@@ -11,11 +12,16 @@ import User from '../User';
 import './style.css';
 
 export default function Modal({
-  title, setIsOpen, isOpen, handlePlayerId,
+  title, setIsOpen, isOpen,
 }) {
   function handleClick() {
     setIsOpen(false);
   }
+
+  const knowledge = useSelector((state) => state.knowledge.knowledge);
+  const knowledgePerSecond = useSelector((state) => state.knowledge.knowledgePerSecond);
+  const knowledgePerClick = useSelector((state) => state.knowledge.knowledgePerClick);
+  const totalOfClicks = useSelector((state) => state.knowledge.totalOfClicks);
 
   return (
     <div className="box-position">
@@ -28,9 +34,9 @@ export default function Modal({
         </div>
         <div className="modal__content">
           <Bookworm isOpen={title === 'bookworm'} />
-          <Stats totalKnowledge={123} totalClicks={456} knowledgePerSecond={321} knowledgePerClick={789} isOpen={title === 'stats'} />
+          <Stats totalKnowledge={knowledge} totalOfClicks={totalOfClicks} knowledgePerSecond={knowledgePerSecond} knowledgePerClick={knowledgePerClick} isOpen={title === 'stats'} />
           <Shop isOpen={title === 'shop'} />
-          <User isOpen={title === 'user'} handlePlayerId={handlePlayerId} />
+          <User isOpen={title === 'user'} />
         </div>
       </div>
     </div>
@@ -41,5 +47,4 @@ Modal.propTypes = {
   title: PropTypes.string.isRequired,
   setIsOpen: PropTypes.func.isRequired,
   isOpen: PropTypes.bool.isRequired,
-  handlePlayerId: PropTypes.func.isRequired,
 };
