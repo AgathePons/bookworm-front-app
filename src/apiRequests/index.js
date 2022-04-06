@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const apiUrl = 'http://localhost:3001/api';
+const apiUrl = 'http://localhost:8000/api';
 
 export const createAccount = (
     username,

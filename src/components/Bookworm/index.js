@@ -8,12 +8,11 @@ import BookwormMessage from '../BookwormMessage';
 
 import './style.css';
 
-
-const Bookworm = ({ isOpen }) => {
-  const [messages, setMessages] = useState([''])
+function Bookworm({ isOpen }) {
+  const [messages, setMessages] = useState(['']);
 
   useInterval(() => {
-    getRandomSentence(messages, setMessages)
+    getRandomSentence(messages, setMessages);
   }, 1000 * 60 * 15);
 
   useEffect(() => {
@@ -21,7 +20,7 @@ const Bookworm = ({ isOpen }) => {
   }, []);
 
   return (
-    <div className={isOpen ? "bookworm" : "bookworm-hidden"}>
+    <div className={isOpen ? 'bookworm' : 'bookworm-hidden'}>
       {messages.map((e) => <BookwormMessage key={e.id} text={e.text} />)}
     </div>
   );
