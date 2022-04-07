@@ -25,7 +25,7 @@ export default function Buttons() {
         <button onClick={handleClick} type="button" className="buttons__c" value="shop">C</button>
         <button onClick={handleClick} type="button" className="buttons__d" value="stats">D</button>
       </div>
-      <Modal title={title} isOpen={isOpen} setIsOpen={setIsOpen} />
+      <Modal title={title} setIsOpen={setIsOpen} isOpen={isOpen} />
     </div>
   );
 }

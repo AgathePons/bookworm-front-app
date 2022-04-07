@@ -1,13 +1,15 @@
+import { useSelector } from 'react-redux';
 import './style.css';
 
 function UserInfo() {
+  const { pseudo, email } = useSelector((state) => state.user);
   return (
     <>
       <div className="user__info">
         <div className="user__info__title">user information:</div>
         <ul className="user__info__list">
-          <li className="user__info__list__info">pseudo: cbiglemon</li>
-          <li className="user__info__list__info">email: cbiglelmon</li>
+          <li className="user__info__list__info">pseudo: {`${pseudo}`}</li>
+          <li className="user__info__list__info">email: {`${email}`}</li>
         </ul>
       </div>
       <div className="user__form">
