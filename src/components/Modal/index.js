@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 
 // components import
+import User from '../User';
 import Bookworm from '../Bookworm';
 import Stats from '../Stats';
 import Shop from '../Shop';
-import User from '../User';
 
 // assets import
 import './style.css';

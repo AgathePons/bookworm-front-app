@@ -6,7 +6,7 @@ function UserInfoSection({ modify }) {
     <>
       <div className="user__info__title">user information:</div>
       <ul className="user__info__list">
-        <li className="user__info__list__info">pseudo: {`${pseudo}`}</li> {modifyIcon}
+        <li className="user__info__list__info">pseudo: {`${pseudo}`}</li>
         <li className="user__info__list__info">email: {`${email}`}</li>
       </ul>
       <button className="user__info__modify" type="button">Modifier</button>

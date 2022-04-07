@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
 // components import
-import Modal from '../Modal';
+import Modal from 'src/components/Modal';
 
 // assets import
 import './style.css';

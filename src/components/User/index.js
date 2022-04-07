@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 
-import UserForm from '../UserForm';
+import UserForm from 'src/components/UserForm';
 import UserInfo from '../UserInfo';
 
 import './style.css';
 
-function User({ isOpen }) {
+export default function User({ isOpen }) {
   const { isLogged } = useSelector((state) => state.user);
 
   return (
