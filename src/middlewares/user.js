@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { LOGIN, REGISTER_USER, saveUser } from '../actions/user';
+import { loadAllKnowledgeFromUser } from '../actions/knowledge';
 
 const user = (store) => (next) => (action) => {
   switch (action.type) {
@@ -47,6 +48,7 @@ const user = (store) => (next) => (action) => {
           });
 
           store.dispatch(saveUser(response.data));
+          store.dispatch(loadAllKnowledgeFromUser(response.data.playerSave));
           console.log(response.data);
         }
         catch (error) {

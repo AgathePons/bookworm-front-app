@@ -1,4 +1,9 @@
-import { ADD_KNOWLEDGE_PER_CLICK, ADD_KNOWLEDGE_PER_SECOND } from '../actions/knowledge';
+import {
+  ADD_KNOWLEDGE_PER_CLICK,
+  ADD_KNOWLEDGE_PER_SECOND,
+  LOAD_ALL_KNOWLEDGE_FROM_USER,
+}
+  from '../actions/knowledge';
 
 export const initialState = {
   knowledge: 0,
@@ -21,6 +26,16 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         knowledge: state.knowledge + state.knowledgePerSecond,
+      };
+    }
+    case LOAD_ALL_KNOWLEDGE_FROM_USER: {
+      const data = action.payload;
+      return {
+        ...state,
+        knowledge: data.currency,
+        knowledgePerSecond: data.idle_value,
+        knowledgePerClick: data.click_value,
+        totalOfClicks: data.click_counter,
       };
     }
     default:
