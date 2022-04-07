@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { deleteAccount } from 'src/actions/user';
+import { deleteAccount, saveUserStats, disconnectUser } from 'src/actions/user';
 import './style.css';
 
 function UserInfo() {
@@ -8,6 +8,14 @@ function UserInfo() {
 
   function handleDeleteAccount() {
     dispatch(deleteAccount());
+  }
+
+  function handleSave() {
+    dispatch(saveUserStats());
+  }
+
+  function handleDisconnect() {
+    dispatch(disconnectUser());
   }
 
   return (
@@ -20,8 +28,8 @@ function UserInfo() {
         </ul>
       </div>
       <div className="user__form">
-        <button className="user__form__save__button" type="submit">save</button>
-        <button className="user__form__disconnect__button" type="submit">disconnect</button>
+        <button className="user__form__save__button" type="button" onClick={handleSave}>save</button>
+        <button className="user__form__disconnect__button" type="button" onClick={handleDisconnect}>disconnect</button>
       </div>
       <div className="user__form">
         <p className="user__form__warning">You're about to delete your account FOREVER !</p>

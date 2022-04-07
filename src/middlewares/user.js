@@ -4,8 +4,10 @@ import {
   LOGIN,
   REGISTER_USER,
   saveUser,
+  SAVE_USER_STATS,
   resetState,
-} from '../actions/user';
+  DISCONNECT_USER,
+} from 'src/actions/user';
 
 const user = (store) => (next) => (action) => {
   switch (action.type) {
@@ -30,6 +32,36 @@ const user = (store) => (next) => (action) => {
       };
 
       deleteAccount();
+
+      break;
+    }
+
+    case DISCONNECT_USER: {
+      const state = store.getState();
+      const { token } = state.user;
+      const { knowledge, totalOfClicks } = state.knowledge;
+
+      const disconnectUser = async () => {
+        try {
+          const response = await axios.patch('http://localhost:8000/api/disconnect', {
+            currency: knowledge,
+            clickCounter: totalOfClicks,
+          }, {
+            headers: {
+              authorization: `Bearer ${token}`,
+            },
+          });
+          console.log(response);
+          if (response.status === 200) {
+            store.dispatch(resetState());
+          }
+        }
+        catch (error) {
+          console.log(error);
+        }
+      };
+
+      disconnectUser();
 
       break;
     }
@@ -84,6 +116,33 @@ const user = (store) => (next) => (action) => {
       };
 
       registerUser();
+
+      break;
+    }
+
+    case SAVE_USER_STATS: {
+      const state = store.getState();
+      const { token } = state.user;
+      const { knowledge, totalOfClicks } = state.knowledge;
+
+      const saveUserStats = async () => {
+        try {
+          const response = await axios.patch('http://localhost:8000/api/save', {
+            currency: knowledge,
+            clickCounter: totalOfClicks,
+          }, {
+            headers: {
+              authorization: `Bearer ${token}`,
+            },
+          });
+          console.log(response);
+        }
+        catch (error) {
+          console.log(error);
+        }
+      };
+
+      saveUserStats();
 
       break;
     }
