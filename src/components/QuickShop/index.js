@@ -7,7 +7,7 @@ export default function QuickShop({ visible, handleClick }) {
   return (
     <div>
       <div className="quickshop" onClick={handleClick}>
-        quickshop
+        Quickshop
       </div>
       <div className="quickshop__block snaps-inline" style={visible ? { display: 'flex' } : { display: 'none' }}>
         <div className="quickshop__block__item" />

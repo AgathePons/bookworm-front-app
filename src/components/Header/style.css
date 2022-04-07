@@ -1,11 +1,12 @@
 .header {
-  background-color: chartreuse;
+  background-color: rgba(32, 2, 32, .5);
   width: 100%;
   padding: 1rem;
 }
 
 .header:nth-child(1) {
   font-size: 1.5rem;
+  color: white;
 }
 .header:nth-child(2) {
   font-size: 0.5rem;
