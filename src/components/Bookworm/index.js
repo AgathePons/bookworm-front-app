@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
-
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { getFirstSentence, getRandomSentence } from '../../apiRequests';
+import { getFirstSentence, getRandomSentence } from '../../actions/bookworm';
 
 import useInterval from '../../hooks/useInterval';
 
@@ -11,15 +11,20 @@ import BookwormMessage from '../BookwormMessage';
 import './style.css';
 
 export default function Bookworm({ isOpen }) {
-  const [messages, setMessages] = useState(['']);
+  const dispatch = useDispatch();
 
-  useInterval(() => {
-    getRandomSentence(messages, setMessages);
-  }, 1000 * 60 * 15);
+  const { messages } = useSelector((state) => state.bookworm);
+  const { isLogged } = useSelector((state) => state.user);
 
   useEffect(() => {
-    getFirstSentence(setMessages);
+    dispatch(getFirstSentence());
   }, []);
+
+  useInterval(() => {
+    if (isLogged) {
+      dispatch(getRandomSentence());
+    }
+  }, 5000);
 
   return (
     <div className={isOpen ? 'bookworm' : 'bookworm-hidden'}>

@@ -3,10 +3,12 @@ import { combineReducers } from 'redux';
 
 import knowledgeReducer from './knowledge';
 import userReducer from './user';
+import bookwormReducer from './bookworm';
 
 const rootReducer = combineReducers({
   knowledge: knowledgeReducer,
   user: userReducer,
+  bookworm: bookwormReducer,
 });
 
 export default rootReducer;

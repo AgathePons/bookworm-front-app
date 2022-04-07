@@ -18,10 +18,10 @@ export default function Modal({
     setIsOpen(false);
   }
 
-  const knowledge = useSelector((state) => state.knowledge.knowledge);
-  const knowledgePerSecond = useSelector((state) => state.knowledge.knowledgePerSecond);
-  const knowledgePerClick = useSelector((state) => state.knowledge.knowledgePerClick);
-  const totalOfClicks = useSelector((state) => state.knowledge.totalOfClicks);
+  // const knowledge = useSelector((state) => state.knowledge.knowledge);
+  // const knowledgePerSecond = useSelector((state) => state.knowledge.knowledgePerSecond);
+  // const knowledgePerClick = useSelector((state) => state.knowledge.knowledgePerClick);
+  // const totalOfClicks = useSelector((state) => state.knowledge.totalOfClicks);
 
   return (
     <div className="box-position">
@@ -34,7 +34,7 @@ export default function Modal({
         </div>
         <div className="modal__content">
           <Bookworm isOpen={title === 'bookworm'} />
-          <Stats totalKnowledge={knowledge} totalOfClicks={totalOfClicks} knowledgePerSecond={knowledgePerSecond} knowledgePerClick={knowledgePerClick} isOpen={title === 'stats'} />
+          {/* <Stats totalKnowledge={knowledge} totalOfClicks={totalOfClicks} knowledgePerSecond={knowledgePerSecond} knowledgePerClick={knowledgePerClick} isOpen={title === 'stats'} /> */}
           <Shop isOpen={title === 'shop'} />
           <User isOpen={title === 'user'} />
         </div>

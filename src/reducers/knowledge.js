@@ -7,7 +7,7 @@ import {
 
 export const initialState = {
   knowledge: 0,
-  knowledgePerSecond: 10,
+  knowledgePerSecond: 0,
   knowledgePerClick: 1,
   totalOfClicks: 0,
 
