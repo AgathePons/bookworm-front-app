@@ -56,3 +56,17 @@
   font-weight: bold;
   padding: 1rem;
 }
+
+.user__form__warning {
+  font-weight: bold;
+  color: red;
+}
+
+.user__form__delete__button {
+  border: none;
+  text-transform: uppercase;
+  color: white;
+  background-color: rgb(207, 50, 50);
+  font-weight: bold;
+  padding: 1rem;
+}

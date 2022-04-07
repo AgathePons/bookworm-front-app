@@ -1,5 +1,11 @@
 import axios from 'axios';
-import { LOGIN, REGISTER_USER, saveUser } from '../actions/user';
+import {
+  DELETE_ACCOUNT,
+  LOGIN,
+  REGISTER_USER,
+  saveUser,
+  resetState,
+} from '../actions/user';
 
 const user = (store) => (next) => (action) => {
   switch (action.type) {
@@ -54,6 +60,31 @@ const user = (store) => (next) => (action) => {
       };
 
       loginUser();
+
+      break;
+    }
+    case DELETE_ACCOUNT: {
+      const state = store.getState();
+
+      const { token } = state.user;
+
+      const deleteAccount = async () => {
+        try {
+          const response = await axios.delete('http://localhost:8000/api/playerAccount', {
+            headers: {
+              authorization: `Bearer ${token}`,
+            },
+          });
+          if (response.status === 204) {
+            store.dispatch(resetState());
+          }
+        }
+        catch (error) {
+          console.log(error);
+        }
+      };
+
+      deleteAccount();
 
       break;
     }
