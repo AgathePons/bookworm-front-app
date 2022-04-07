@@ -16,7 +16,7 @@ const reducer = (state = initialState, action = {}) => {
     }
     case SAVE_RANDOM_SENTENCE: {
       const data = action.payload;
-      const newMessage = [data];
+      const newMessage = [...state.messages, data];
       return {
         ...state,
         messages: newMessage,

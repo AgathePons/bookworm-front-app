@@ -31,7 +31,7 @@ const user = (store) => (next) => (action) => {
             },
           });
           console.log(response.data);
-          saveRandomSentence((response.data));
+          store.dispatch(saveRandomSentence(response.data));
         }
         catch (error) {
           // TODO
