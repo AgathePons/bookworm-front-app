@@ -1,28 +1,24 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import UserForm from '../UserForm';
 import UserInfo from '../UserInfo';
 
 import './style.css';
 
-export default function User({ isOpen, handlePlayerId }) {
-  const [logged, setLogged] = useState(false);
-
-  const handleSubmit = () => {
-    setLogged(true);
-  };
+function User({ isOpen }) {
+  const { isLogged } = useSelector((state) => state.user);
 
   return (
     <div className={isOpen ? 'user' : 'user-hidden'}>
-      {logged
-        ? <UserInfo />
-        : <UserForm handleSubmit={handleSubmit} handlePlayerId={handlePlayerId} />}
+      {
+        isLogged
+          ? <UserInfo /> : <UserForm />
+      }
     </div>
   );
 }
 
 User.propTypes = {
   isOpen: PropTypes.bool.isRequired,
-  handlePlayerId: PropTypes.func.isRequired,
 };
