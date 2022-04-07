@@ -47,6 +47,7 @@ const user = (store) => (next) => (action) => {
           });
 
           store.dispatch(saveUser(response.data));
+          console.log(response.data);
         }
         catch (error) {
           console.log(error);

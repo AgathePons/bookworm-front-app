@@ -10,12 +10,13 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding: 1em;
 }
 
 .buttons__block > div{
   background-color: pink;
-  padding: 0.2em;
-  margin: 0.1em;
+  padding: 0.5em;
+  margin: 0.5em;
 }
 
 @media screen and (min-width: 1366px) {
