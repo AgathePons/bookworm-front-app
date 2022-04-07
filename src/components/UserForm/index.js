@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { changeUserFormsField, registerUser } from 'src/actions/user';
+import { changeUserFormsField, registerUser, login } from 'src/actions/user';
 
 import './style.css';
 
@@ -21,6 +21,7 @@ function UserForm() {
   //                   !!!!!!!!!!!!              //
   const handleLoginSubmit = (event) => {
     event.preventDefault();
+    dispatch(login());
   };
 
   const handleRegisterSubmit = (event) => {

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import UserForm from '../UserForm';
 import UserInfo from '../UserInfo';
@@ -6,17 +6,13 @@ import UserInfo from '../UserInfo';
 import './style.css';
 
 function User({ isOpen }) {
-  const [logged, setLogged] = useState(false);
-
-  const handleSubmit = () => {
-    setLogged(true);
-  };
+  const { isLogged } = useSelector((state) => state.user);
 
   return (
     <div className={isOpen ? 'user' : 'user-hidden'}>
       {
-        logged
-          ? <UserInfo /> : <UserForm handleSubmit={handleSubmit} />
+        isLogged
+          ? <UserInfo /> : <UserForm />
       }
     </div>
   );
