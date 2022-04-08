@@ -2,6 +2,7 @@ import {
   ADD_KNOWLEDGE_PER_CLICK,
   ADD_KNOWLEDGE_PER_SECOND,
   LOAD_ALL_KNOWLEDGE_FROM_USER,
+  RESET_KNOWLEDGE,
 }
   from '../actions/knowledge';
 
@@ -36,6 +37,11 @@ const reducer = (state = initialState, action = {}) => {
         knowledgePerSecond: data.idle_value,
         knowledgePerClick: data.click_value,
         totalOfClicks: data.click_counter,
+      };
+    }
+    case RESET_KNOWLEDGE: {
+      return {
+        ...initialState,
       };
     }
     default:

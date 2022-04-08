@@ -9,7 +9,7 @@ import {
   DISCONNECT_USER,
 } from 'src/actions/user';
 
-import { loadAllKnowledgeFromUser } from '../actions/knowledge';
+import { loadAllKnowledgeFromUser, resetKnowledge } from '../actions/knowledge';
 
 import { loadShopContentFromUser } from '../actions/shop';
 
@@ -28,6 +28,7 @@ const user = (store) => (next) => (action) => {
           });
           if (response.status === 204) {
             store.dispatch(resetState());
+            store.dispatch(resetKnowledge());
           }
         }
         catch (error) {
@@ -58,6 +59,7 @@ const user = (store) => (next) => (action) => {
           console.log(response);
           if (response.status === 200) {
             store.dispatch(resetState());
+            store.dispatch(resetKnowledge());
           }
         }
         catch (error) {

@@ -10,10 +10,10 @@ export default function ShopItem({
 }) {
   const dispatch = useDispatch();
   const handleClick = () => {
-    if (number > 0) {
-      dispatch(buyMoreShopItem(id));
+    if (number === 0) {
+      dispatch(buyShopItem(id));
     }
-    dispatch(buyShopItem(id));
+    dispatch(buyMoreShopItem(id));
   };
   const handleCost = () => {
     if (number > 0) {
