@@ -68,8 +68,6 @@ function Header() {
   }, 1000);
 
   const readableKnowledge = convertToReadable(knowledge);
-  console.log('readable', readableKnowledge);
-  console.log('knowledge', knowledge);
 
   return (
     <div className="header">
