@@ -9,6 +9,8 @@ import {
   DISCONNECT_USER,
 } from 'src/actions/user';
 
+import { loadAllKnowledgeFromUser } from '../actions/knowledge';
+
 const user = (store) => (next) => (action) => {
   switch (action.type) {
     case DELETE_ACCOUNT: {
@@ -78,6 +80,7 @@ const user = (store) => (next) => (action) => {
           });
 
           store.dispatch(saveUser(response.data));
+          store.dispatch(loadAllKnowledgeFromUser(response.data.playerSave));
         }
         catch (error) {
           console.log(error);
