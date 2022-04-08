@@ -68,7 +68,7 @@ function Header() {
   }, 1000);
 
   const readableKnowledge = convertToReadable(knowledge);
-
+  console.log(knowledge);
   return (
     <div className="header">
       <Currency counter={readableKnowledge} />
