@@ -1,11 +1,96 @@
 import axios from 'axios';
-import { LOGIN, REGISTER_USER, saveUser } from '../actions/user';
+import {
+  DELETE_ACCOUNT,
+  LOGIN,
+  REGISTER_USER,
+  saveUser,
+  SAVE_USER_STATS,
+  resetState,
+  DISCONNECT_USER,
+} from 'src/actions/user';
 
 const user = (store) => (next) => (action) => {
   switch (action.type) {
+    case DELETE_ACCOUNT: {
+      const state = store.getState();
+      const { token } = state.user;
+
+      const deleteAccount = async () => {
+        try {
+          const response = await axios.delete('http://localhost:8000/api/playerAccount', {
+            headers: {
+              authorization: `Bearer ${token}`,
+            },
+          });
+          if (response.status === 204) {
+            store.dispatch(resetState());
+          }
+        }
+        catch (error) {
+          console.log(error);
+        }
+      };
+
+      deleteAccount();
+
+      break;
+    }
+
+    case DISCONNECT_USER: {
+      const state = store.getState();
+      const { token } = state.user;
+      const { knowledge, totalOfClicks } = state.knowledge;
+
+      const disconnectUser = async () => {
+        try {
+          const response = await axios.patch('http://localhost:8000/api/disconnect', {
+            currency: knowledge,
+            clickCounter: totalOfClicks,
+          }, {
+            headers: {
+              authorization: `Bearer ${token}`,
+            },
+          });
+          console.log(response);
+          if (response.status === 200) {
+            store.dispatch(resetState());
+          }
+        }
+        catch (error) {
+          console.log(error);
+        }
+      };
+
+      disconnectUser();
+
+      break;
+    }
+
+    case LOGIN: {
+      const state = store.getState();
+      const { loginEmail, loginPassword } = state.user;
+
+      const loginUser = async () => {
+        try {
+          const response = await axios.post('http://localhost:8000/api/login', {
+            mail: loginEmail,
+            password: loginPassword,
+          });
+
+          store.dispatch(saveUser(response.data));
+        }
+        catch (error) {
+          console.log(error);
+        }
+      };
+
+      loginUser();
+
+      break;
+    }
+
     case REGISTER_USER: {
       const state = store.getState();
-
       const {
         pseudo,
         email,
@@ -34,16 +119,21 @@ const user = (store) => (next) => (action) => {
 
       break;
     }
-    case LOGIN: {
+
+    case SAVE_USER_STATS: {
       const state = store.getState();
+      const { token } = state.user;
+      const { knowledge, totalOfClicks } = state.knowledge;
 
-      const { loginEmail, loginPassword } = state.user;
-
-      const loginUser = async () => {
+      const saveUserStats = async () => {
         try {
-          const response = await axios.post('http://localhost:8000/api/login', {
-            mail: loginEmail,
-            password: loginPassword,
+          const response = await axios.patch('http://localhost:8000/api/save', {
+            currency: knowledge,
+            clickCounter: totalOfClicks,
+          }, {
+            headers: {
+              authorization: `Bearer ${token}`,
+            },
           });
 
           store.dispatch(saveUser(response.data));
@@ -54,10 +144,11 @@ const user = (store) => (next) => (action) => {
         }
       };
 
-      loginUser();
+      saveUserStats();
 
       break;
     }
+
     default:
       next(action);
   }

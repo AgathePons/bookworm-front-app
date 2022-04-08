@@ -1,8 +1,23 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { deleteAccount, saveUserStats, disconnectUser } from 'src/actions/user';
 import './style.css';
 
 function UserInfo() {
   const { pseudo, email } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+
+  function handleDeleteAccount() {
+    dispatch(deleteAccount());
+  }
+
+  function handleSave() {
+    dispatch(saveUserStats());
+  }
+
+  function handleDisconnect() {
+    dispatch(disconnectUser());
+  }
+
   return (
     <>
       <div className="user__info">
@@ -13,12 +28,12 @@ function UserInfo() {
         </ul>
       </div>
       <div className="user__form">
-        <form className="user__form__save">
-          <button className="user__form__save__button" type="submit">save</button>
-        </form>
-        <form className="user__form__disconnect">
-          <button className="user__form__disconnect__button" type="submit">disconnect</button>
-        </form>
+        <button className="user__form__save__button" type="button" onClick={handleSave}>save</button>
+        <button className="user__form__disconnect__button" type="button" onClick={handleDisconnect}>disconnect</button>
+      </div>
+      <div className="user__form">
+        <p className="user__form__warning">You're about to delete your account FOREVER !</p>
+        <button type="button" className="user__form__delete__button" onClick={handleDeleteAccount}>delete account</button>
       </div>
     </>
   );
