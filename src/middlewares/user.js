@@ -144,7 +144,7 @@ const user = (store) => (next) => (action) => {
             },
           });
 
-          store.dispatch(saveUser(response.data));
+          store.dispatch(saveUserStats(response.data));
           store.dispatch(loadAllKnowledgeFromUser(response.data.playerSave));
           console.log(response.data);
         }
