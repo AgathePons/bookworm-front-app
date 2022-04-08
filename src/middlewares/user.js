@@ -11,6 +11,8 @@ import {
 
 import { loadAllKnowledgeFromUser } from '../actions/knowledge';
 
+import { loadShopContentFromUser } from '../actions/shop';
+
 const user = (store) => (next) => (action) => {
   switch (action.type) {
     case DELETE_ACCOUNT: {
@@ -81,6 +83,7 @@ const user = (store) => (next) => (action) => {
 
           store.dispatch(saveUser(response.data));
           store.dispatch(loadAllKnowledgeFromUser(response.data.playerSave));
+          store.dispatch(loadShopContentFromUser(response.data.playerSave));
         }
         catch (error) {
           console.log(error);
@@ -111,6 +114,8 @@ const user = (store) => (next) => (action) => {
           });
 
           store.dispatch(saveUser(response.data));
+          store.dispatch(loadAllKnowledgeFromUser(response.data.playerSave));
+          store.dispatch(loadShopContentFromUser(response.data.playerSave));
         }
         catch (error) {
           // TODO

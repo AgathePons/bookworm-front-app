@@ -9,7 +9,6 @@ const user = (store) => (next) => (action) => {
       const fetchFirstSentence = async () => {
         try {
           const response = await axios.get('http://localhost:8000/api/sentence/first');
-          console.log(response.data);
           store.dispatch(saveFirstSentence(response.data));
         }
         catch (error) {
@@ -32,7 +31,7 @@ const user = (store) => (next) => (action) => {
               authorization: `Bearer ${token}`,
             },
           });
-          console.log(response.data);
+
           store.dispatch(saveRandomSentence(response.data));
         }
         catch (error) {
