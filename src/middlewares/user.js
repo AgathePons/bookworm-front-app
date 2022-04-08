@@ -1,8 +1,4 @@
 import axios from 'axios';
-<<<<<<< HEAD
-import { LOGIN, REGISTER_USER, saveUser } from '../actions/user';
-import { loadAllKnowledgeFromUser } from '../actions/knowledge';
-=======
 import {
   DELETE_ACCOUNT,
   LOGIN,
@@ -12,7 +8,6 @@ import {
   resetState,
   DISCONNECT_USER,
 } from 'src/actions/user';
->>>>>>> d07349d3382f328d3b57940ab4d68e7f05370563
 
 const user = (store) => (next) => (action) => {
   switch (action.type) {

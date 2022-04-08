@@ -1,5 +1,7 @@
 import axios from 'axios';
-import { GET_FIRST_SENTENCE, GET_RANDOM_SENTENCE, saveFirstSentence, saveRandomSentence } from '../actions/bookworm';
+import {
+  GET_FIRST_SENTENCE, GET_RANDOM_SENTENCE, saveFirstSentence, saveRandomSentence,
+} from '../actions/bookworm';
 
 const user = (store) => (next) => (action) => {
   switch (action.type) {
