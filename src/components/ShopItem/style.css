@@ -12,6 +12,10 @@
   margin-bottom: 0;
 }
 
+.not-buyable {
+  border: 1px solid red;
+}
+
 .shopitem__left__img {
   width: 3rem;
   height: 3rem;

@@ -2,8 +2,8 @@ import { CHANGE_USER_FORMS_FIELD, SAVE_USER, RESET_STATE } from 'src/actions/use
 
 export const initialState = {
   isLogged: false,
-  loginEmail: '',
-  loginPassword: '',
+  loginEmail: 'biglemon@gmail.com',
+  loginPassword: '1234',
   email: '',
   password: '',
   passwordConfirm: '',
