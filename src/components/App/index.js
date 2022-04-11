@@ -31,8 +31,6 @@ function App() {
     }
   }, 1000 * 60);
 
-  const dispatch = useDispatch();
-
   const handleVisible = () => {
     setVisible(!visible);
   };
