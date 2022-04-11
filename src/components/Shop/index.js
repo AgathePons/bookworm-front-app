@@ -31,6 +31,8 @@ export default function Shop({ isOpen }) {
     idlePercentNot,
   } = generatorsNotOwned;
 
+  console.log(clickFlat);
+
   function handleClicOnTab(e) {
     switch (e.target.name) {
       case 'clic':
@@ -49,7 +51,7 @@ export default function Shop({ isOpen }) {
     }
   }
 
-  console.log(generatorsOwned);
+  console.log(generatorsNotOwned);
   return (
     <div className={isOpen ? 'shop__container' : 'shop__container-hidden'}>
       <div className="shop__container__tabs">
@@ -67,14 +69,14 @@ export default function Shop({ isOpen }) {
           clicTabSelected
           && flatTabSelected
           && clickFlat[0].length !== 0
-            ? clickFlat[0].map((e) => <ShopItem key={e.id} id={e.id} name={e.name} cost={e.starting_cost} nextCost={e.next_cost} number={e.number_owned} />)
+            ? clickFlat[0].map((e) => <ShopItem key={e.id} id={e.id} name={e.name} cost={e.starting_cost} nextCost={e.next_cost} number={e.number_owned} text={e.text} clickFlat={e.clic_flat_value} />)
             : ''
           }
           {
           clicTabSelected
           && flatTabSelected
           && clickFlatNot[0].length !== 0
-            ? clickFlatNot[0].map((e) => <ShopItem key={e.id} id={e.id} name={e.name} cost={e.starting_cost} nextCost={e.next_cost} number={e.number_owned} />)
+            ? clickFlatNot[0].map((e) => <ShopItem key={e.id} id={e.id} name={e.name} cost={e.starting_cost} nextCost={e.next_cost} number={e.number_owned} text={e.text} clickFlat={e.clic_flat_value} />)
             : ''
           }
           {/* click percent */}
@@ -82,14 +84,14 @@ export default function Shop({ isOpen }) {
           clicTabSelected
           && !flatTabSelected
           && clickPercent[0].length !== 0
-            ? clickPercent[0].map((e) => <ShopItem key={e.id} id={e.id} name={e.name} cost={e.starting_cost} nextCost={e.next_cost} number={e.number_owned} />)
+            ? clickPercent[0].map((e) => <ShopItem key={e.id} id={e.id} name={e.name} cost={e.starting_cost} nextCost={e.next_cost} number={e.number_owned} text={e.text} clickPercent={e.clic_percent_value} />)
             : ''
           }
           {
           clicTabSelected
           && !flatTabSelected
           && clickPercentNot[0].length !== 0
-            ? clickPercentNot[0].map((e) => <ShopItem key={e.id} id={e.id} name={e.name} cost={e.starting_cost} nextCost={e.next_cost} number={e.number_owned} />)
+            ? clickPercentNot[0].map((e) => <ShopItem key={e.id} id={e.id} name={e.name} cost={e.starting_cost} nextCost={e.next_cost} number={e.number_owned} text={e.text} clickPercent={e.clic_percent_value} />)
             : ''
           }
           {/* idle flat */}
@@ -97,14 +99,14 @@ export default function Shop({ isOpen }) {
           !clicTabSelected
           && flatTabSelected
           && idleFlat[0].length !== 0
-            ? idleFlat[0].map((e) => <ShopItem key={e.id} id={e.id} name={e.name} cost={e.starting_cost} nextCost={e.next_cost} number={e.number_owned} />)
+            ? idleFlat[0].map((e) => <ShopItem key={e.id} id={e.id} name={e.name} cost={e.starting_cost} nextCost={e.next_cost} number={e.number_owned} text={e.text} idleFlat={e.idle_flat_value} />)
             : ''
           }
           {
           !clicTabSelected
           && flatTabSelected
           && idleFlatNot[0].length !== 0
-            ? idleFlatNot[0].map((e) => <ShopItem key={e.id} id={e.id} name={e.name} cost={e.starting_cost} nextCost={e.next_cost} number={e.number_owned} />)
+            ? idleFlatNot[0].map((e) => <ShopItem key={e.id} id={e.id} name={e.name} cost={e.starting_cost} nextCost={e.next_cost} number={e.number_owned} text={e.text} idleFlat={e.idle_flat_value} />)
             : ''
           }
           {/* idle percent */}
@@ -112,14 +114,14 @@ export default function Shop({ isOpen }) {
           !clicTabSelected
           && !flatTabSelected
           && idlePercent[0].length !== 0
-            ? idlePercent[0].map((e) => <ShopItem key={e.id} id={e.id} name={e.name} cost={e.starting_cost} nextCost={e.next_cost} number={e.number_owned} />)
+            ? idlePercent[0].map((e) => <ShopItem key={e.id} id={e.id} name={e.name} cost={e.starting_cost} nextCost={e.next_cost} number={e.number_owned} text={e.text} idlePercent={e.idle_percent_value} />)
             : ''
           }
           {
           !clicTabSelected
           && !flatTabSelected
           && idlePercentNot[0].length !== 0
-            ? idlePercentNot[0].map((e) => <ShopItem key={e.id} id={e.id} name={e.name} cost={e.starting_cost} nextCost={e.next_cost} number={e.number_owned} />)
+            ? idlePercentNot[0].map((e) => <ShopItem key={e.id} id={e.id} name={e.name} cost={e.starting_cost} nextCost={e.next_cost} number={e.number_owned} text={e.text} idlePercent={e.idle_percent_value} />)
             : ''
           }
 
