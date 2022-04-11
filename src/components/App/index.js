@@ -1,13 +1,12 @@
 // npm imports
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 // custom hooks import
-import useInterval from '../../hooks/useInterval';
 
 // action creators import
-import { checkUser } from 'src/actions/user';
-import { saveUserStats } from 'src/actions/user';
+import { checkUser, saveUserStats } from 'src/actions/user';
+import useInterval from '../../hooks/useInterval';
 
 // components import
 import Header from '../Header';
@@ -19,7 +18,7 @@ import './style.css';
 
 function App() {
   const {
-    isLogged
+    isLogged,
   } = useSelector((state) => state.user);
 
   const [visible, setVisible] = useState(false);
