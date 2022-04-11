@@ -50,7 +50,6 @@ export default function Shop({ isOpen }) {
     }
   }
 
-  console.log(generatorsOwned);
   return (
     <div className={isOpen ? 'shop__container' : 'shop__container-hidden'}>
       <div className="shop__container__tabs">
