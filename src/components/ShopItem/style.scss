@@ -1,0 +1,62 @@
+.shopitem__container {
+  background-color: #ffff00;
+  border-radius: 5px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+
+  &.not-buyable {
+    opacity: .5;
+    cursor: not-allowed;
+  }
+
+  .shopitem__left {
+    .shopitem__left__img {
+      width: 3.5rem;
+      height: 3.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url("data:image/svg+xml,%3Csvg version='1.1' baseProfile='tiny' id='Calque_2' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='62px' height='62px' viewBox='5 5 62 62' xml:space='preserve'%3E%3Cpath fill='%236CF5C6' d='M67 55c0 6.627-5.373 12-12 12H19c-6.627 0-12-5.373-12-12V19c0-6.627 5.373-12 12-12h36c6.627 0 12 5.373 12 12V55z'/%3E%3Cpath fill='%23FFF000' d='M65 53c0 6.627-5.373 12-12 12H17c-6.627 0-12-5.373-12-12V17c0-6.627 5.373-12 12-12h36c6.627 0 12 5.373 12 12V53z'/%3E%3C/svg%3E");
+      background-size: cover;
+      & > svg {
+        fill: #200220;
+        margin: .5rem;
+      }
+    }
+    .shopitem__left_price {
+      margin-top: 0.2rem;
+    }
+  }
+  .shopitem__middle {
+    display: flex;
+    align-items: center;
+    .shopitem__middle__name {
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+  }
+  .shopitem__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .shopitem__right__button {
+      background: none;
+      border: none;
+      width: 3rem;
+      height: 3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.shopitem__container:last-child {
+  margin-bottom: 0;
+}
+
+
