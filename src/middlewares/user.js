@@ -7,6 +7,7 @@ import {
   SAVE_USER_STATS,
   resetState,
   DISCONNECT_USER,
+  CHECK_USER,
 } from 'src/actions/user';
 
 import { loadAllKnowledgeFromUser, resetKnowledge } from '../actions/knowledge';
@@ -83,6 +84,8 @@ const user = (store) => (next) => (action) => {
             password: loginPassword,
           });
 
+          // localStorage.setItem('token', response.data.token);
+
           store.dispatch(saveUser(response.data));
           store.dispatch(loadAllKnowledgeFromUser(response.data.playerSave));
           store.dispatch(loadShopContentFromUser(response.data.playerSave));
@@ -114,6 +117,8 @@ const user = (store) => (next) => (action) => {
             password: password,
             passwordConfirm: passwordConfirm,
           });
+
+          // localStorage.setItem('token', response.data.token);
 
           store.dispatch(saveUser(response.data));
           store.dispatch(loadAllKnowledgeFromUser(response.data.playerSave));
@@ -158,6 +163,28 @@ const user = (store) => (next) => (action) => {
 
       break;
     }
+
+    // case CHECK_USER: {
+    //   const token = localStorage.getItem('token');
+
+    //   const checkForUser = async () => {
+    //     try {
+    //       const response = await axios.get('http://localhost:8000/api/playerAccount', {
+    //         headers: {
+    //           authorization: `Bearer ${token}`,
+    //         },
+    //       });
+
+    //       console.log('checkforuser', response.data);
+    //     }
+    //     catch (error) {
+    //       console.log(error);
+    //     }
+    //   };
+
+    //   checkForUser();
+    //   break;
+    // }
 
     default:
       next(action);

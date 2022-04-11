@@ -1,7 +1,9 @@
 // npm imports
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 
-// custom hooks import
+// action creators import
+import { checkUser } from 'src/actions/user';
 
 // components import
 import Header from '../Header';
@@ -14,9 +16,15 @@ import './style.css';
 function App() {
   const [visible, setVisible] = useState(false);
 
+  const dispatch = useDispatch();
+
   const handleVisible = () => {
     setVisible(!visible);
   };
+
+  useEffect(() => {
+    dispatch(checkUser());
+  }, []);
 
   return (
     <div className="app">

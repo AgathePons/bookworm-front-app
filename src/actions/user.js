@@ -7,6 +7,7 @@ export const DELETE_ACCOUNT = 'DELETE_ACCOUNT';
 export const RESET_STATE = 'RESET_STATE';
 export const SAVE_USER_STATS = 'SAVE_USER_STATS';
 export const DISCONNECT_USER = 'DISCONNECT_USER';
+export const CHECK_USER = 'CHECK_USER';
 
 // Action creators
 export const changeUserFormsField = (value, name) => ({
@@ -42,4 +43,8 @@ export const saveUserStats = () => ({
 
 export const disconnectUser = () => ({
   type: DISCONNECT_USER,
+});
+
+export const checkUser = () => ({
+  type: CHECK_USER,
 });
