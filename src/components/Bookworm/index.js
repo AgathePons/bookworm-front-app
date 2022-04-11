@@ -8,7 +8,7 @@ import useInterval from '../../hooks/useInterval';
 
 import BookwormMessage from '../BookwormMessage';
 
-import './style.css';
+import './style.scss';
 
 export default function Bookworm({ isOpen }) {
   const dispatch = useDispatch();

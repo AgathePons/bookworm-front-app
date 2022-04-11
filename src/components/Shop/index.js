@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import ShopItem from '../ShopItem';
 
 // assets import
-import './style.css';
+import './style.scss';
 
 export default function Shop({ isOpen }) {
   const [clicTabSelected, setClicTab] = useState(true);
@@ -32,6 +32,7 @@ export default function Shop({ isOpen }) {
   } = generatorsNotOwned;
 
   function handleClicOnTab(e) {
+    e.stopPropagation();
     switch (e.target.name) {
       case 'clic':
         setClicTab(true);
@@ -53,8 +54,13 @@ export default function Shop({ isOpen }) {
   return (
     <div className={isOpen ? 'shop__container' : 'shop__container-hidden'}>
       <div className="shop__container__tabs">
-        <button type="button" name="clic" className={clicTabSelected ? 'shop__container__tabs__clic shop__container__tabs__clic--selected' : 'shop__container__tabs__clic'} onClick={handleClicOnTab}>clic</button>
-        <button type="button" name="bookworm" className={clicTabSelected ? 'shop__container__tabs__bookworm' : 'shop__container__tabs__bookworm shop__container__tabs__bookworm--selected'} onClick={handleClicOnTab}>bookworm</button>
+        <button type="button" name="clic" className={clicTabSelected ? 'shop__container__tabs__clic shop__container__tabs__clic--selected' : 'shop__container__tabs__clic'} onClick={handleClicOnTab}>
+          <span>test</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M318.4 304.5c-3.531 9.344-12.47 15.52-22.45 15.52h-105l45.15 94.82c9.496 19.94 1.031 43.8-18.91 53.31c-19.95 9.504-43.82 1.035-53.32-18.91L117.3 351.3l-75 88.25c-4.641 5.469-11.37 8.453-18.28 8.453c-2.781 0-5.578-.4844-8.281-1.469C6.281 443.1 0 434.1 0 423.1V56.02c0-9.438 5.531-18.03 14.12-21.91C22.75 30.26 32.83 31.77 39.87 37.99l271.1 240C319.4 284.6 321.1 295.1 318.4 304.5z"/></svg>
+        </button>
+        <button type="button" name="bookworm" className={clicTabSelected ? 'shop__container__tabs__bookworm' : 'shop__container__tabs__bookworm shop__container__tabs__bookworm--selected'} onClick={handleClicOnTab}>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 96C256 42.98 298.1 0 352 0H390.4C439.9 0 480 40.12 480 89.6V376C480 451.1 419.1 512 344 512C268.9 512 208 451.1 208 376V296C208 273.9 190.1 256 168 256C145.9 256 128 273.9 128 296V464C128 490.5 106.5 512 80 512C53.49 512 32 490.5 32 464V296C32 220.9 92.89 160 168 160C243.1 160 304 220.9 304 296V376C304 398.1 321.9 416 344 416C366.1 416 384 398.1 384 376V192H352C298.1 192 256 149 256 96zM376 64C362.7 64 352 74.75 352 88C352 101.3 362.7 112 376 112C389.3 112 400 101.3 400 88C400 74.75 389.3 64 376 64z"/></svg>
+        </button>
       </div>
       <div className="shop__container__nested">
         <div className="shop__container__nested__tabs">
