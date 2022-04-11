@@ -10,10 +10,18 @@ export default function Stats({ isOpen }) {
   const knowledgePerSecond = useSelector((state) => state.knowledge.knowledgePerSecond);
   const knowledgePerClick = useSelector((state) => state.knowledge.knowledgePerClick);
   const totalOfClicks = useSelector((state) => state.knowledge.totalOfClicks);
+  const { isLogged } = useSelector((state) => state.user);
+  const { generatorsOwned } = useSelector((state) => state.shop);
+
+  const {
+    clickFlat,
+    clickPercent,
+    idleFlat,
+    idlePercent,
+  } = generatorsOwned;
 
   return (
     <div className={isOpen ? 'stats__container' : 'stats__container-hidden'}>
-      {/* TODO map sur les datas qu'on aura fetch */}
       <div className="stats__container__block">
         <p className="stat__container__block__name">Total knowledge earned:</p>
         <p className="stat__container__block__value">{knowledge}</p>
@@ -27,38 +35,49 @@ export default function Stats({ isOpen }) {
       </div>
       <div className="stats__container__upgrades">
         <p className="stat__container__upgrades__name">Upgrades bought:</p>
-        {/* TODO map sur les datas qu'on aura fetch */}
         <div className="stat__container__upgrades__items">
-          <div className="item" />
-          <div className="item" />
-          <div className="item" />
-          <div className="item" />
-          <div className="item" />
-          <div className="item" />
-          <div className="item" />
-          <div className="item" />
-          <div className="item" />
-          <div className="item" />
-          <div className="item" />
-          <div className="item" />
-          <div className="item" />
-          <div className="item" />
-          <div className="item" />
-          <div className="item" />
-          <div className="item" />
-          <div className="item" />
-          <div className="item" />
-          <div className="item" />
-          <div className="item" />
-          <div className="item" />
-          <div className="item" />
-          <div className="item" />
-          <div className="item" />
-          <div className="item" />
-          <div className="item" />
-          <div className="item" />
+          {
+            (isLogged && clickFlat[0].length !== 0)
+            && clickFlat[0].map((elem) => (
+              <div className="item-block">
+                <div className="item-icon" />
+                <p className="item-number">{elem.number_owned}</p>
+              </div>
+            ))
+          }
+          {
+            (isLogged && clickPercent[0].length !== 0)
+            && clickPercent[0].map((elem) => (
+              <div className="item-block">
+                <div className="item-icon" />
+                <p className="item-number">{elem.number_owned}</p>
+              </div>
+            ))
+          }
+          {
+            (isLogged && idleFlat[0].length !== 0)
+            && idleFlat[0].map((elem) => (
+              <div className="item-block">
+                <div className="item-icon" />
+                <p className="item-number">{elem.number_owned}</p>
+              </div>
+            ))
+          }
+          {
+            (isLogged && idlePercent[0].length !== 0)
+            && idlePercent[0].map((elem) => (
+              <div className="item-block">
+                <div className="item-icon" />
+                <p className="item-number">{elem.number_owned}</p>
+              </div>
+            ))
+          }
         </div>
       </div>
     </div>
   );
 }
+
+Stats.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+};

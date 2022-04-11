@@ -1,10 +1,13 @@
 // npm imports
-import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-dom';
+import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 // custom hooks import
-import { saveUserStats } from 'src/actions/user';
 import useInterval from '../../hooks/useInterval';
+
+// action creators import
+import { checkUser } from 'src/actions/user';
+import { saveUserStats } from 'src/actions/user';
 
 // components import
 import Header from '../Header';
@@ -28,9 +31,15 @@ function App() {
     }
   }, 1000 * 60);
 
+  const dispatch = useDispatch();
+
   const handleVisible = () => {
     setVisible(!visible);
   };
+
+  useEffect(() => {
+    dispatch(checkUser());
+  }, []);
 
   return (
     <div className="app">
