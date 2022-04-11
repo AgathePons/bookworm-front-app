@@ -3,13 +3,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { buyShopItem, buyMoreShopItem } from '../../actions/shop';
+import ShopItemDetail from '../ShopItemModal';
 
 import './style.css';
 
 export default function ShopItem({
-  id, name, cost, nextCost, number,
+  id, name, cost, nextCost, number, text, clickFlat, clickPercent, idleFlat, idlePercent,
 }) {
   const [isBuyable, setIsBuyable] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const dispatch = useDispatch();
   const knowledge = useSelector((state) => state.knowledge.knowledge);
 
@@ -43,6 +45,11 @@ export default function ShopItem({
     return console.log('oops, there was a problem!');
   };
 
+  const handleModal = (event) => {
+    event.stopPropagation();
+    setIsOpen(true);
+  };
+
   useEffect(() => {
     const verify = handleCost();
     if (verify === cost) {
@@ -73,9 +80,22 @@ export default function ShopItem({
         <div className="shopitem__middle__name">{name}</div>
       </div>
       <div className="shopitem__right">
-        <button type="button" className="shopitem__right__button">button</button>
+        <button type="button" className="shopitem__right__button" onClick={handleModal}>button</button>
         <p className="shopitem__right__number">x{number}</p>
       </div>
+      { isOpen && (
+      <ShopItemDetail
+        name={name}
+        text={text}
+        number={number}
+        setIsOpen={setIsOpen}
+        handleCost={handleCost}
+        idleFlat={idleFlat}
+        idlePercent={idlePercent}
+        clickFlat={clickFlat}
+        clickPercent={clickPercent}
+      />
+      )}
     </div>
   );
 }
@@ -83,11 +103,21 @@ export default function ShopItem({
 ShopItem.propTypes = {
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
   cost: PropTypes.number.isRequired,
   nextCost: PropTypes.number.isRequired,
   number: PropTypes.number,
+  idleFlat: PropTypes.number,
+  idlePercent: PropTypes.number,
+  clickFlat: PropTypes.number,
+  clickPercent: PropTypes.number,
+
 };
 
 ShopItem.defaultProps = {
   number: 0,
+  idleFlat: null,
+  idlePercent: null,
+  clickFlat: null,
+  clickPercent: null,
 };
