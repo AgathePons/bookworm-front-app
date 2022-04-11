@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 
 // components import
 import ShopItem from '../ShopItem';
+import ShopItemMystery from '../ShopItemMystery';
 
 // assets import
 import './style.css';
@@ -74,7 +75,12 @@ export default function Shop({ isOpen }) {
           clicTabSelected
           && flatTabSelected
           && clickFlatNot[0].length !== 0
-            ? clickFlatNot[0].map((e) => <ShopItem key={e.id} id={e.id} name={e.name} cost={e.starting_cost} nextCost={e.next_cost} number={e.number_owned} />)
+            ? clickFlatNot[0].map((e, i) => {
+              if (clickFlatNot[0].length > 1 && i !== 0) {
+                return <ShopItemMystery />;
+              }
+              return <ShopItem key={e.id} id={e.id} name={e.name} cost={e.starting_cost} nextCost={e.next_cost} number={e.number_owned} />;
+            })
             : ''
           }
           {/* click percent */}
@@ -89,7 +95,12 @@ export default function Shop({ isOpen }) {
           clicTabSelected
           && !flatTabSelected
           && clickPercentNot[0].length !== 0
-            ? clickPercentNot[0].map((e) => <ShopItem key={e.id} id={e.id} name={e.name} cost={e.starting_cost} nextCost={e.next_cost} number={e.number_owned} />)
+            ? clickPercentNot[0].map((e, i) => {
+              if (clickPercentNot[0].length > 1 && i !== 0) {
+                return <ShopItemMystery />;
+              }
+              return <ShopItem key={e.id} id={e.id} name={e.name} cost={e.starting_cost} nextCost={e.next_cost} number={e.number_owned} />;
+            })
             : ''
           }
           {/* idle flat */}
@@ -104,7 +115,12 @@ export default function Shop({ isOpen }) {
           !clicTabSelected
           && flatTabSelected
           && idleFlatNot[0].length !== 0
-            ? idleFlatNot[0].map((e) => <ShopItem key={e.id} id={e.id} name={e.name} cost={e.starting_cost} nextCost={e.next_cost} number={e.number_owned} />)
+            ? idleFlatNot[0].map((e, i) => {
+              if (idleFlatNot[0].length > 1 && i !== 0) {
+                return <ShopItemMystery />;
+              }
+              return <ShopItem key={e.id} id={e.id} name={e.name} cost={e.starting_cost} nextCost={e.next_cost} number={e.number_owned} />;
+            })
             : ''
           }
           {/* idle percent */}
@@ -119,7 +135,12 @@ export default function Shop({ isOpen }) {
           !clicTabSelected
           && !flatTabSelected
           && idlePercentNot[0].length !== 0
-            ? idlePercentNot[0].map((e) => <ShopItem key={e.id} id={e.id} name={e.name} cost={e.starting_cost} nextCost={e.next_cost} number={e.number_owned} />)
+            ? idlePercentNot[0].map((e, i) => {
+              if (idlePercentNot[0].length > 1 && i !== 0) {
+                return <ShopItemMystery />;
+              }
+              return <ShopItem key={e.id} id={e.id} name={e.name} cost={e.starting_cost} nextCost={e.next_cost} number={e.number_owned} />;
+            })
             : ''
           }
 
