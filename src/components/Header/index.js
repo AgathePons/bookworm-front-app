@@ -14,6 +14,7 @@ import './style.css';
 
 // #region Knowledge converter
 function convertToReadable(knowledge) {
+  const regex = /^-?\d+(?:\.\d{0,3})?/;
   let modifiedNumber;
   let unit;
 
@@ -21,23 +22,23 @@ function convertToReadable(knowledge) {
 
   if (knowledge >= 1e3 && knowledge < 1e6) {
     unit = 'k';
-    modifiedNumber = (knowledge / 1e3).toFixed(3);
+    modifiedNumber = (knowledge / 1e3).toString().match(regex);
   }
   else if (knowledge >= 1e6 && knowledge < 1e9) {
     unit = 'M';
-    modifiedNumber = (knowledge / 1e6).toFixed(3);
+    modifiedNumber = (knowledge / 1e6).toString().match(regex);
   }
   else if (knowledge >= 1e9 && knowledge < 1e12) {
     unit = 'B';
-    modifiedNumber = `${(knowledge / 1e9).toFixed(3)}`;
+    modifiedNumber = (knowledge / 1e9).toString().match(regex);
   }
   else if (knowledge >= 1e12 && knowledge < 1e15) {
     unit = 'T';
-    modifiedNumber = `${(knowledge / 1e12).toFixed(3)}`;
+    modifiedNumber = (knowledge / 1e12).toString().match(regex);
   }
   else if (knowledge >= 1e15 && knowledge < 1e18) {
     unit = 'Q';
-    modifiedNumber = `${(knowledge / 1e15).toFixed(3)}`;
+    modifiedNumber = (knowledge / 1e15).toString().match(regex);
   }
 
   const numberToString = modifiedNumber.toString();
