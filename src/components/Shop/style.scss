@@ -21,7 +21,7 @@
       }
     }
     [class*='--selected'] {
-      background-color: #200220;
+      background-color: rgba(32,2,32,.5);;
     }
     .shop__container__tabs__clic {
       margin-right: 1rem;
@@ -35,7 +35,7 @@
 .shop__container__nested {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
+  border: 1px solid #ff0;
   height: 100%;
   .shop__container__nested__tabs {
     display: flex;
@@ -64,7 +64,8 @@
   flex-direction: column;
   align-items: flex-start;
   flex-grow: 1;
-  background-color: #200220;
+  z-index: 0;
+  background-color: rgba(32,2,32,.5);
   padding: 1rem;
 }
 

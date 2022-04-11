@@ -10,7 +10,7 @@ import Currency from '../Currency';
 import CurrencyPerSecond from '../CurrencyPerSecond';
 
 // assets import
-import './style.css';
+import './style.scss';
 
 // #region Knowledge converter
 function convertToReadable(knowledge) {
@@ -72,6 +72,7 @@ function Header() {
 
   return (
     <div className="header">
+      <h3 className="header__title">Knowledge</h3>
       <Currency counter={readableKnowledge} />
       <CurrencyPerSecond idleCounter={knowledgePerSecond} />
     </div>
