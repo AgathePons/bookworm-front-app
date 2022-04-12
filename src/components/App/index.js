@@ -12,6 +12,7 @@ import useInterval from '../../hooks/useInterval';
 import Header from '../Header';
 import Book from '../Book';
 import Container from '../Container';
+import LoginModal from '../loginModal';
 
 // assets import
 import './style.css';
@@ -22,6 +23,7 @@ function App() {
   } = useSelector((state) => state.user);
 
   const [visible, setVisible] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const dispatch = useDispatch();
 
   useInterval(() => {
@@ -37,13 +39,17 @@ function App() {
 
   useEffect(() => {
     dispatch(checkUser());
-  }, []);
+    if (isLogged) {
+      setIsModalOpen(true);
+    }
+  }, [isLogged]);
 
   return (
     <div className="app">
       <div className="app__header">
         <Header />
         <Book />
+        {(isLogged && isModalOpen) && <LoginModal setIsModalOpen={setIsModalOpen} />}
       </div>
       <Container visible={visible} handleClick={handleVisible} />
     </div>

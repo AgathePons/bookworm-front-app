@@ -85,7 +85,7 @@ const user = (store) => (next) => (action) => {
           });
 
           // localStorage.setItem('token', response.data.token);
-
+          console.log(response.data);
           store.dispatch(saveUser(response.data));
           store.dispatch(loadAllKnowledgeFromUser(response.data.playerSave));
           store.dispatch(loadShopContentFromUser(response.data.playerSave));

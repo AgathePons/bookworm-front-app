@@ -1,5 +1,6 @@
 // npm import
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
 // components import
 import Modal from 'src/components/Modal';
@@ -10,11 +11,18 @@ import './style.css';
 export default function Buttons() {
   const [isOpen, setIsOpen] = useState(false);
   const [title, setTitle] = useState('');
+  const isLogged = useSelector((state) => state.user.isLogged);
 
   function handleClick(e) {
     setTitle(e.target.value);
     setIsOpen(true);
   }
+
+  useEffect(() => {
+    if (isLogged) {
+      setIsOpen(false);
+    }
+  }, [isLogged]);
   return (
     <div className="buttons">
       <div className="buttons__block">

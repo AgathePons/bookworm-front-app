@@ -9,6 +9,7 @@ export const initialState = {
   passwordConfirm: '',
   pseudo: '',
   token: '',
+  logoutCurrency: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -34,6 +35,7 @@ const reducer = (state = initialState, action = {}) => {
         token: data.token,
         pseudo: data.playerSave.username,
         email: data.playerSave.mail,
+        logoutCurrency: data.logoutCurrency,
       };
     }
     default:

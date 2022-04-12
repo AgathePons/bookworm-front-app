@@ -1,0 +1,23 @@
+.loginmodal {
+  display: flex;
+  flex-direction: column;
+  width: 200px
+}
+
+.loginmodal__header {
+  padding: 0.5rem;
+  display: flex;
+  color: black;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border: 1px solid blue;
+}
+.loginmodal__body {
+  padding: 1rem;
+  color: black;
+  background-color: white;
+  border: 1px solid blue;
+}
+
+
