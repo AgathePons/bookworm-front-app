@@ -13,7 +13,6 @@ import Header from '../Header';
 import Book from '../Book';
 import Container from '../Container';
 import LoginModal from '../loginModal';
-import Spinner from '../Spinner';
 
 // assets import
 import './style.css';
@@ -25,16 +24,13 @@ function App() {
   } = useSelector((state) => state.user);
   const [visible, setVisible] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isLoading, setIsloading] = useState(false);
 
   useInterval(() => {
     if (isLogged) {
       console.log('je save');
-      setIsloading(true);
       dispatch(saveUserStats());
     }
-    setIsloading(false);
-  }, 5000);
+  }, 1000 * 60);
 
   const handleVisible = () => {
     setVisible(!visible);
@@ -52,7 +48,6 @@ function App() {
       <div className="app__header">
         <Header />
         <Book />
-        {isLoading && <Spinner />}
         {(isLogged && isModalOpen) && <LoginModal setIsModalOpen={setIsModalOpen} />}
       </div>
       <Container visible={visible} handleClick={handleVisible} />
