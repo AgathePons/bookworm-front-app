@@ -35,8 +35,8 @@
 .shop__container__nested {
   display: flex;
   flex-direction: column;
-  border: 1px solid #ff0;
   height: 100%;
+  padding-bottom: 1rem;
   .shop__container__nested__tabs {
     display: flex;
     position: relative;
@@ -44,7 +44,7 @@
 
     [class^='shop__container__nested__tabs__'] {
       flex-grow: 1;
-      border: 1px solid black;
+      border: 1px solid red;
       background-color: rgb(38, 199, 65);
     }
     [class*='--selected'] {
@@ -67,6 +67,14 @@
   z-index: 0;
   background-color: rgba(32,2,32,.5);
   padding: 1rem;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 3px;
+    background-color: rgba(32,2,32,.5);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #6cf5c6;
+  }
 }
 
 .shop__container__tabs__clic--selected, .shop__container__tabs__bookworm--selected {
