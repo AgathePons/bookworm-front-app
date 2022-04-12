@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { changeUserFormsField, registerUser, login } from 'src/actions/user';
 
 // assets import
-import './style.css';
+import './style.scss';
 
 export default function UserForm() {
   const {

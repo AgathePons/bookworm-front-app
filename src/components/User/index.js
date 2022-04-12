@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import UserForm from 'src/components/UserForm';
 import UserInfo from '../UserInfo';
 
-import './style.css';
+import './style.scss';
 
 export default function User({ isOpen }) {
   const { isLogged } = useSelector((state) => state.user);

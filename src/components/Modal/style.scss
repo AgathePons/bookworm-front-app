@@ -76,11 +76,13 @@
 @media screen and (min-width: 1366px) {
   .modal {
     position: absolute;
-    width: 400px;
-    right: 100px;
-    top: 200px;
-    bottom: 200px;
-    left: auto;
+    width: 33%;
+    bottom: 1rem;
+    left: 1rem;
+    top: 117px;
+    .modal__content {
+      height: calc(100% - 70px - 3rem);
+    }
   }
 }
 
