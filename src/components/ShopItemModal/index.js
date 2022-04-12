@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import convertToReadable from '../../selectors';
 
 import './style.css';
 
@@ -40,7 +41,7 @@ export default function ShopItemModal({
             <p>BONUS: {handleBonus()}</p>
           </div>
           <div className="shoitemdetail__footer">
-            <p>{handleCost && handleCost()}</p>
+            <p>{handleCost && convertToReadable(handleCost())}</p>
             <p>{number}</p>
           </div>
         </div>

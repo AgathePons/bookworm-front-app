@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import convertToReadable from '../../selectors';
 
 import './style.css';
 
@@ -16,7 +17,7 @@ export default function LoginModal({ setIsModalOpen }) {
             <button type="button" onClick={handleClick}>x</button>
           </div>
           <div className="loginmodal__body">
-            <p>You've earned {logoutCurrency} while disconnected!</p>
+            <p>You've earned {convertToReadable(logoutCurrency)} while disconnected!</p>
           </div>
         </div>
       </div>

@@ -20,5 +20,5 @@ export default function FloatingNumber({ x, y, value }) {
 FloatingNumber.propTypes = {
   x: PropTypes.number.isRequired,
   y: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired,
+  value: PropTypes.string.isRequired,
 };

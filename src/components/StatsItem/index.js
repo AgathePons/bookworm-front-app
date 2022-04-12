@@ -36,8 +36,15 @@ StatsItem.propTypes = {
   number: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
-  idleFlat: PropTypes.number.isRequired,
-  idlePercent: PropTypes.number.isRequired,
-  clickFlat: PropTypes.number.isRequired,
-  clickPercent: PropTypes.number.isRequired,
+  idleFlat: PropTypes.number,
+  idlePercent: PropTypes.number,
+  clickFlat: PropTypes.number,
+  clickPercent: PropTypes.number,
+};
+
+StatsItem.defaultProps = {
+  idleFlat: 0,
+  idlePercent: 0,
+  clickFlat: 0,
+  clickPercent: 0,
 };

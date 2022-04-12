@@ -2,10 +2,12 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addKnowledgePerClick } from 'src/actions/knowledge';
 import { useIntervalWhen } from 'rooks';
+import { v4 as uuidv4 } from 'uuid';
 
 import FloatingNumber from 'src/components/FloatingNumber';
 
 import book from 'src/assets/images/Book.gif';
+import convertToReadable from '../../selectors';
 
 import './style.css';
 
@@ -39,7 +41,16 @@ function Book() {
     }
 
     // eslint-disable-next-line consistent-return
-    return arr.map((elem) => <FloatingNumber x={elem.x} y={elem.y} value={elem.value} />);
+    return arr.map(
+      (elem) => (
+        <FloatingNumber
+          key={uuidv4()}
+          x={elem.x}
+          y={elem.y}
+          value={convertToReadable(elem.value)}
+        />
+      ),
+    );
   };
 
   return (

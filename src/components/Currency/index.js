@@ -7,5 +7,5 @@ export default function Currency({ counter }) {
 }
 
 Currency.propTypes = {
-  counter: PropTypes.number.isRequired,
+  counter: PropTypes.string.isRequired,
 };
