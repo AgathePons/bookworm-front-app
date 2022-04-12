@@ -20,7 +20,7 @@ function Book() {
       floatingCopy.pop();
       setFloating(floatingCopy);
     }
-  }, 2500, floating.length !== 0);
+  }, 1000, floating.length !== 0);
 
   const handleBookClick = (e) => {
     const newFloating = [...floating];
