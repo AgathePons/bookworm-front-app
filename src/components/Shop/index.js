@@ -34,7 +34,7 @@ export default function Shop({ isOpen }) {
 
   function handleClicOnTab(e) {
     e.stopPropagation();
-    switch (e.target.name) {
+    switch (e.currentTarget.name) {
       case 'clic':
         setClicTab(true);
         break;
