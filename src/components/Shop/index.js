@@ -2,6 +2,7 @@
 // npm import
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
 import PropTypes from 'prop-types';
 
 // components import
@@ -72,7 +73,7 @@ export default function Shop({ isOpen }) {
           clicTabSelected
           && flatTabSelected
           && clickFlat[0].length !== 0
-            ? clickFlat[0].map((e) => <ShopItem key={e.id} id={e.id} name={e.name} cost={e.starting_cost} nextCost={e.next_cost} number={e.number_owned} text={e.text} clickFlat={e.clic_flat_value} />)
+            ? clickFlat[0].map((e) => <ShopItem key={uuidv4()} id={e.id} name={e.name} cost={e.starting_cost} nextCost={e.next_cost} number={e.number_owned} text={e.text} clickFlat={e.clic_flat_value} />)
             : ''
           }
           {
@@ -81,9 +82,9 @@ export default function Shop({ isOpen }) {
           && clickFlatNot[0].length !== 0
             ? clickFlatNot[0].map((e, i) => {
               if (clickFlatNot[0].length > 1 && i !== 0) {
-                return <ShopItemMystery />;
+                return <ShopItemMystery key={uuidv4()} />;
               }
-              return <ShopItem key={e.id} id={e.id} name={e.name} cost={e.starting_cost} nextCost={e.next_cost} number={e.number_owned} text={e.text} clickFlat={e.clic_flat_value} />;
+              return <ShopItem key={uuidv4()} id={e.id} name={e.name} cost={e.starting_cost} nextCost={e.next_cost} number={e.number_owned} text={e.text} clickFlat={e.clic_flat_value} />;
             })
             : ''
           }
@@ -92,7 +93,7 @@ export default function Shop({ isOpen }) {
           clicTabSelected
           && !flatTabSelected
           && clickPercent[0].length !== 0
-            ? clickPercent[0].map((e) => <ShopItem key={e.id} id={e.id} name={e.name} cost={e.starting_cost} nextCost={e.next_cost} number={e.number_owned} text={e.text} clickPercent={e.clic_percent_value} />)
+            ? clickPercent[0].map((e) => <ShopItem key={uuidv4()} id={e.id} name={e.name} cost={e.starting_cost} nextCost={e.next_cost} number={e.number_owned} text={e.text} clickPercent={e.clic_percent_value} />)
             : ''
           }
           {
@@ -101,9 +102,9 @@ export default function Shop({ isOpen }) {
           && clickPercentNot[0].length !== 0
             ? clickPercentNot[0].map((e, i) => {
               if (clickPercentNot[0].length > 1 && i !== 0) {
-                return <ShopItemMystery />;
+                return <ShopItemMystery key={uuidv4()} />;
               }
-              return <ShopItem key={e.id} id={e.id} name={e.name} cost={e.starting_cost} nextCost={e.next_cost} number={e.number_owned} text={e.text} clickPercent={e.clic_percent_value} />;
+              return <ShopItem key={uuidv4()} id={e.id} name={e.name} cost={e.starting_cost} nextCost={e.next_cost} number={e.number_owned} text={e.text} clickPercent={e.clic_percent_value} />;
             })
             : ''
           }
@@ -112,7 +113,7 @@ export default function Shop({ isOpen }) {
           !clicTabSelected
           && flatTabSelected
           && idleFlat[0].length !== 0
-            ? idleFlat[0].map((e) => <ShopItem key={e.id} id={e.id} name={e.name} cost={e.starting_cost} nextCost={e.next_cost} number={e.number_owned} text={e.text} idleFlat={e.idle_flat_value} />)
+            ? idleFlat[0].map((e) => <ShopItem key={uuidv4()} id={e.id} name={e.name} cost={e.starting_cost} nextCost={e.next_cost} number={e.number_owned} text={e.text} idleFlat={e.idle_flat_value} />)
             : ''
           }
           {
@@ -121,9 +122,9 @@ export default function Shop({ isOpen }) {
           && idleFlatNot[0].length !== 0
             ? idleFlatNot[0].map((e, i) => {
               if (idleFlatNot[0].length > 1 && i !== 0) {
-                return <ShopItemMystery />;
+                return <ShopItemMystery key={uuidv4()} />;
               }
-              return <ShopItem key={e.id} id={e.id} name={e.name} cost={e.starting_cost} nextCost={e.next_cost} number={e.number_owned} text={e.text} idleFlat={e.idle_flat_value} />;
+              return <ShopItem key={uuidv4()} id={e.id} name={e.name} cost={e.starting_cost} nextCost={e.next_cost} number={e.number_owned} text={e.text} idleFlat={e.idle_flat_value} />;
             })
             : ''
           }
@@ -132,7 +133,7 @@ export default function Shop({ isOpen }) {
           !clicTabSelected
           && !flatTabSelected
           && idlePercent[0].length !== 0
-            ? idlePercent[0].map((e) => <ShopItem key={e.id} id={e.id} name={e.name} cost={e.starting_cost} nextCost={e.next_cost} number={e.number_owned} text={e.text} idlePercent={e.idle_percent_value} />)
+            ? idlePercent[0].map((e) => <ShopItem key={uuidv4()} id={e.id} name={e.name} cost={e.starting_cost} nextCost={e.next_cost} number={e.number_owned} text={e.text} idlePercent={e.idle_percent_value} />)
             : ''
           }
           {
@@ -141,9 +142,9 @@ export default function Shop({ isOpen }) {
           && idlePercentNot[0].length !== 0
             ? idlePercentNot[0].map((e, i) => {
               if (idlePercentNot[0].length > 1 && i !== 0) {
-                return <ShopItemMystery />;
+                return <ShopItemMystery key={uuidv4()} />;
               }
-              return <ShopItem key={e.id} id={e.id} name={e.name} cost={e.starting_cost} nextCost={e.next_cost} number={e.number_owned} text={e.text} idlePercent={e.idle_percent_value} />;
+              return <ShopItem key={uuidv4()} id={e.id} name={e.name} cost={e.starting_cost} nextCost={e.next_cost} number={e.number_owned} text={e.text} idlePercent={e.idle_percent_value} />;
             })
             : ''
           }

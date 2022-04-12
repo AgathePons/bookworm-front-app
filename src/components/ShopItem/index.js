@@ -109,7 +109,7 @@ ShopItem.propTypes = {
   name: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   cost: PropTypes.number.isRequired,
-  nextCost: PropTypes.number.isRequired,
+  nextCost: PropTypes.number,
   number: PropTypes.number,
   idleFlat: PropTypes.number,
   idlePercent: PropTypes.number,
@@ -119,6 +119,7 @@ ShopItem.propTypes = {
 };
 
 ShopItem.defaultProps = {
+  nextCost: 0,
   number: 0,
   idleFlat: null,
   idlePercent: null,
