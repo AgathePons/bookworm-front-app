@@ -1,4 +1,18 @@
 .floating-number {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 1.5rem;
+  //animation: floating_fade .5s timing-function delay iteration-count direction fill-mode;
+  animation: floating_fade 2s cubic-bezier(0.17, 0.84, 0.44, 1) 0s 1;
 }
+
+@keyframes floating_fade {
+  from {
+    opacity: 1;
+    transform: scale(2) translate(0, 0);
+  }
+ 
+  to {
+    opacity: 0;
+     transform: scale(.8) translate(10px, -65px);
+  }
+ }

@@ -7,7 +7,7 @@ import FloatingNumber from 'src/components/FloatingNumber';
 
 import book from 'src/assets/images/Book.gif';
 
-import './style.css';
+import './style.scss';
 
 function Book() {
   const dispatch = useDispatch();
@@ -20,7 +20,7 @@ function Book() {
       floatingCopy.pop();
       setFloating(floatingCopy);
     }
-  }, 1000, floating.length !== 0);
+  }, 2500, floating.length !== 0);
 
   const handleBookClick = (e) => {
     const newFloating = [...floating];
