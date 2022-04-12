@@ -6,15 +6,12 @@ import { v4 as uuidv4 } from 'uuid';
 
 // components imports
 import StatsItem from '../StatsItem';
+import StatsKnowledge from '../StatsKnowledge';
 
 // assets imports
 import './style.css';
 
 export default function Stats({ isOpen }) {
-  const knowledge = useSelector((state) => state.knowledge.knowledge);
-  const knowledgePerSecond = useSelector((state) => state.knowledge.knowledgePerSecond);
-  const knowledgePerClick = useSelector((state) => state.knowledge.knowledgePerClick);
-  const totalOfClicks = useSelector((state) => state.knowledge.totalOfClicks);
   const { isLogged } = useSelector((state) => state.user);
   const { generatorsOwned } = useSelector((state) => state.shop);
 
@@ -27,17 +24,7 @@ export default function Stats({ isOpen }) {
 
   return (
     <div className={isOpen ? 'stats__container' : 'stats__container-hidden'}>
-      <div className="stats__container__block">
-        <p className="stat__container__block__name">Total knowledge earned:</p>
-        <p className="stat__container__block__value">{knowledge}</p>
-        <p className="stat__container__block__name">Total clicks:</p>
-        <p className="stat__container__block__value">{totalOfClicks}</p>
-        <p className="stat__container__block__name">Knowledge per second:</p>
-        <p className="stat__container__block__value">{knowledgePerSecond}</p>
-        <p className="stat__container__block__name">Knowledge per click:</p>
-        <p className="stat__container__block__value">{knowledgePerClick}</p>
-
-      </div>
+      <StatsKnowledge />
       <div className="stats__container__upgrades">
         <p className="stat__container__upgrades__name">Upgrades bought:</p>
         <div className="stat__container__upgrades__items">

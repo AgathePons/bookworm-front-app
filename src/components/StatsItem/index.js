@@ -7,9 +7,7 @@ export default function StatsItem({
   name, text, number, idleFlat, idlePercent, clickFlat, clickPercent,
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const handleModal = (event) => {
-    event.stopPropagation();
+  const handleModal = () => {
     setIsModalOpen(true);
   };
 
