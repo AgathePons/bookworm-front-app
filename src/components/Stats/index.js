@@ -2,6 +2,7 @@
 // npm imports
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
 
 // components imports
 import StatsItem from '../StatsItem';
@@ -43,25 +44,25 @@ export default function Stats({ isOpen }) {
           {
             (isLogged && clickFlat[0].length !== 0)
             && clickFlat[0].map((elem) => (
-              <StatsItem number={elem.number_owned} name={elem.name} text={elem.text} clickFlat={elem.clic_flat_value} />
+              <StatsItem key={uuidv4()} number={elem.number_owned} name={elem.name} text={elem.text} clickFlat={elem.clic_flat_value} />
             ))
           }
           {
             (isLogged && clickPercent[0].length !== 0)
             && clickPercent[0].map((elem) => (
-              <StatsItem number={elem.number_owned} name={elem.name} text={elem.text} clickPercent={elem.clic_percent_value} />
+              <StatsItem key={uuidv4()} number={elem.number_owned} name={elem.name} text={elem.text} clickPercent={elem.clic_percent_value} />
             ))
           }
           {
             (isLogged && idleFlat[0].length !== 0)
             && idleFlat[0].map((elem) => (
-              <StatsItem number={elem.number_owned} name={elem.name} text={elem.text} idleFlat={elem.idle_flat_value} />
+              <StatsItem key={uuidv4()} number={elem.number_owned} name={elem.name} text={elem.text} idleFlat={elem.idle_flat_value} />
             ))
           }
           {
             (isLogged && idlePercent[0].length !== 0)
             && idlePercent[0].map((elem) => (
-              <StatsItem number={elem.number_owned} name={elem.name} text={elem.text} idlePercent={elem.idle_percent_value} />
+              <StatsItem key={uuidv4()} number={elem.number_owned} name={elem.name} text={elem.text} idlePercent={elem.idle_percent_value} />
             ))
           }
         </div>
