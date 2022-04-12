@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
 import PropTypes from 'prop-types';
 
 import { getFirstSentence, getRandomSentence } from '../../actions/bookworm';
@@ -7,6 +8,7 @@ import { getFirstSentence, getRandomSentence } from '../../actions/bookworm';
 import useInterval from '../../hooks/useInterval';
 
 import BookwormMessage from '../BookwormMessage';
+
 
 import './style.scss';
 
@@ -28,7 +30,7 @@ export default function Bookworm({ isOpen }) {
 
   return (
     <div className={isOpen ? 'bookworm' : 'bookworm-hidden'}>
-      {messages.map((e) => <BookwormMessage key={e.id} text={e.text} />)}
+      {messages.map((e) => <BookwormMessage key={uuidv4()} text={e.text} />)}
     </div>
   );
 }

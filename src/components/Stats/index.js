@@ -1,6 +1,7 @@
 // npm imports
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
 
 // assets imports
 import './style.css';
@@ -39,7 +40,7 @@ export default function Stats({ isOpen }) {
           {
             (isLogged && clickFlat[0].length !== 0)
             && clickFlat[0].map((elem) => (
-              <div className="item-block">
+              <div key={uuidv4()} className="item-block">
                 <div className="item-icon" />
                 <p className="item-number">{elem.number_owned}</p>
               </div>
@@ -48,7 +49,7 @@ export default function Stats({ isOpen }) {
           {
             (isLogged && clickPercent[0].length !== 0)
             && clickPercent[0].map((elem) => (
-              <div className="item-block">
+              <div key={uuidv4()} className="item-block">
                 <div className="item-icon" />
                 <p className="item-number">{elem.number_owned}</p>
               </div>
@@ -57,7 +58,7 @@ export default function Stats({ isOpen }) {
           {
             (isLogged && idleFlat[0].length !== 0)
             && idleFlat[0].map((elem) => (
-              <div className="item-block">
+              <div key={uuidv4()} className="item-block">
                 <div className="item-icon" />
                 <p className="item-number">{elem.number_owned}</p>
               </div>
@@ -66,7 +67,7 @@ export default function Stats({ isOpen }) {
           {
             (isLogged && idlePercent[0].length !== 0)
             && idlePercent[0].map((elem) => (
-              <div className="item-block">
+              <div key={uuidv4()} className="item-block">
                 <div className="item-icon" />
                 <p className="item-number">{elem.number_owned}</p>
               </div>

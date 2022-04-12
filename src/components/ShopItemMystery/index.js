@@ -11,7 +11,7 @@ export default function ShopItemMystery() {
   };
 
   return (
-    <div className="shopitem__container">
+    <div className="shopitem__container mystery">
       <div className="shopitem__left">
         <div className="shopitem__left__img">?</div>
         <p className="shopitem__left_price">???</p>
