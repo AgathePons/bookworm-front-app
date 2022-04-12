@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import convertToReadable from '../../selectors';
 
 export default function StatsKnowledge() {
   const knowledge = useSelector((state) => state.knowledge.knowledge);
@@ -8,13 +9,13 @@ export default function StatsKnowledge() {
   return (
     <div className="stats__container__block">
       <p className="stat__container__block__name">Total knowledge earned:</p>
-      <p className="stat__container__block__value">{knowledge}</p>
+      <p className="stat__container__block__value">{convertToReadable(knowledge)}</p>
       <p className="stat__container__block__name">Total clicks:</p>
       <p className="stat__container__block__value">{totalOfClicks}</p>
       <p className="stat__container__block__name">Knowledge per second:</p>
-      <p className="stat__container__block__value">{knowledgePerSecond}</p>
+      <p className="stat__container__block__value">{convertToReadable(knowledgePerSecond)}</p>
       <p className="stat__container__block__name">Knowledge per click:</p>
-      <p className="stat__container__block__value">{knowledgePerClick}</p>
+      <p className="stat__container__block__value">{convertToReadable(knowledgePerClick)}</p>
     </div>
   );
 }
