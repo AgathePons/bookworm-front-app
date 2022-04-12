@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 import './style.css';
 
-export default function ShopItemDetail({
+export default function ShopItemModal({
   name, number, text, handleCost, setIsModalOpen, clickFlat, clickPercent, idleFlat, idlePercent,
 }) {
   const handleClick = (event) => {
@@ -49,7 +49,7 @@ export default function ShopItemDetail({
   );
 }
 
-ShopItemDetail.propTypes = {
+ShopItemModal.propTypes = {
   name: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   handleCost: PropTypes.func,
@@ -61,7 +61,7 @@ ShopItemDetail.propTypes = {
   clickPercent: PropTypes.number,
 };
 
-ShopItemDetail.defaultProps = {
+ShopItemModal.defaultProps = {
   number: 0,
   handleCost: null,
   idleFlat: null,
