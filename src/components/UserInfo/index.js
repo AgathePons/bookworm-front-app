@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteAccount, saveUserStats, disconnectUser } from 'src/actions/user';
-import './style.css';
+import './style.scss';
 
 function UserInfo() {
   const { pseudo, email } = useSelector((state) => state.user);
@@ -21,13 +21,13 @@ function UserInfo() {
   return (
     <>
       <div className="user__info">
-        <div className="user__info__title">user information:</div>
+        <div className="user__info__title">informations:</div>
         <ul className="user__info__list">
           <li className="user__info__list__info">pseudo: {`${pseudo}`}</li>
           <li className="user__info__list__info">email: {`${email}`}</li>
         </ul>
       </div>
-      <div className="user__form">
+      <div className="user__form user__form__save">
         <button className="user__form__save__button" type="button" onClick={handleSave}>save</button>
         <button className="user__form__disconnect__button" type="button" onClick={handleDisconnect}>disconnect</button>
       </div>

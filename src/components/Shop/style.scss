@@ -3,31 +3,35 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding-bottom: 1rem;
+  padding-bottom: 0;
   .shop__container__tabs {
     display: flex;
     position: relative;
-    top: 1px;
+    margin-bottom: 1rem;
 
     [class^='shop__container__tabs__'] {
-      border: 1px solid #fff;
-      background-color: rgb(38, 199, 65);
-      width: 35px;
-      height: 35px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(32,2,32, .3);
+      border: none;
+      width: 40px;
+      height: 40px;
       padding: .5rem;
       & > svg {
         width: 100%;
         height: 100%;
+        fill: rgba(255, 255, 255, .5);
       }
     }
     [class*='--selected'] {
-      background-color: rgba(32,2,32,.5);;
+      background-color: rgba(32,2,32,.5);
+      & > svg {
+        fill: rgba(255, 255, 255, 1);
+      }
     }
     .shop__container__tabs__clic {
       margin-right: 1rem;
-    }
-    .shop__container__tabs__bookworm {
-      
     }
   }
 }
@@ -35,26 +39,31 @@
 .shop__container__nested {
   display: flex;
   flex-direction: column;
-  border: 1px solid #ff0;
   height: 100%;
+  overflow: hidden;
   .shop__container__nested__tabs {
     display: flex;
     position: relative;
-    top: 1px;
 
     [class^='shop__container__nested__tabs__'] {
       flex-grow: 1;
-      border: 1px solid black;
-      background-color: rgb(38, 199, 65);
+      border: none;
+      background-color: rgba(32,2,32, .3);
+      padding: .3rem;
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+      & > svg {
+        width: 16px;
+        height: 16px;
+        fill: rgba(255, 255, 255, .5);
+      }
     }
     [class*='--selected'] {
-      background-color: lightcoral;
-    }
-    .shop__container__nested__tabs__flat {
-  
-    }
-    .shop__container__nested__tabs__percent {
-  
+      background-color: rgba(32,2,32,.5);
+      & > svg {
+        fill: rgba(255, 255, 255, 1);
+      }
     }
   }
 }
@@ -66,15 +75,24 @@
   flex-grow: 1;
   z-index: 0;
   background-color: rgba(32,2,32,.5);
-  padding: 1rem;
-}
-
-.shop__container__tabs__clic--selected, .shop__container__tabs__bookworm--selected {
-  border-bottom: 1px solid rgb(38, 199, 65);
-}
-
-.shop__container__nested__tabs__flat--selected, .shop__container__nested__tabs__percent--selected {
-  border-bottom: 1px solid rgb(38, 199, 65);
+  padding: 1rem 0 1rem 1rem;
+  overflow: hidden;
+  .inner_shop {
+    width: 100%;
+    height: 100%;
+    padding-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+      width: 3px;
+      background-color: rgba(32,2,32,.5);
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #6cf5c6;
+    }
+  }
 }
 
 .shop__container-hidden {

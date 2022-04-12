@@ -1,0 +1,94 @@
+.user__info {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 1rem;
+  gap: 1rem;
+  color: #200220;
+  filter: drop-shadow(2px 2px #200220);
+}
+
+.user__info__title {
+  font-size: 1.5rem;
+}
+
+.user__info__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.user__info__list__info {
+}
+
+.user__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &.user__form__save {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 0;
+    .user__form__save__button {
+      border: none;
+      font-size: 2rem;
+      font-family: 'Press Start 2P', sans-serif;
+      text-transform: uppercase;
+      color: #200220;
+      background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffff00' fill-opacity='0.5' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E"),
+                        linear-gradient(to bottom left,#ff0,#6cf5c6);
+      position: relative;
+      padding: 1rem;
+
+      &:hover, &:active {
+        &:after {
+          box-shadow: 5px 5px 7px;
+        }
+      }
+
+      &:after {
+        position: absolute;
+        z-index: -1;
+        top: 3px;
+        left: 3px;
+        border-radius: 0px;
+        display: block;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom left,#6cf5c6,#822F8A);
+        margin-bottom: -2px;
+        box-shadow: 3px 3px 5px #000;
+        transition: all .3s cubic-bezier(0.17, 0.84, 0.44, 1);
+      }
+    }
+    .user__form__disconnect__button {
+      border: none;
+      margin-top: 3rem;
+      text-transform: uppercase;
+      color: white;
+      background-color: rgb(207, 50, 50);
+      font-weight: bold;
+      padding: 1rem;
+    }
+  }
+}
+
+
+
+.user__form__warning {
+  font-weight: bold;
+  color: red;
+}
+
+.user__form__delete__button {
+  border: none;
+  text-transform: uppercase;
+  color: white;
+  background-color: rgb(207, 50, 50);
+  font-weight: bold;
+  padding: 1rem;
+}

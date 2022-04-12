@@ -12,7 +12,7 @@
   cursor: pointer;
   transition: all .1s cubic-bezier(0.17, 0.84, 0.44, 1);
 
-  &.not-buyable {
+  &.not-buyable, &.mystery {
     opacity: .5;
     cursor: not-allowed;
     &:after {
@@ -36,7 +36,7 @@
     transition: all .3s cubic-bezier(0.17, 0.84, 0.44, 1);
   }
 
-  &:hover:not(.not-buyable), &:active:not(.not-buyable) {
+  &:hover, &:active {
     &:after {
       box-shadow: 5px 5px 7px;
     }
@@ -44,6 +44,36 @@
       .shopitem__left__img {
         & > svg {
           filter: drop-shadow(-2px 2px #D2FF01) drop-shadow(2px -2px #6cf5c6) drop-shadow(2px 2px #822F8A) drop-shadow(-2px -2px #fff);
+        }
+      }
+    }
+  }
+
+  &.not-buyable:hover {
+    .shopitem__left {
+      .shopitem__left__img {
+        & > svg {
+          filter: drop-shadow(-2px -2px #D2FF01) drop-shadow(2px 2px #6cf5c6) drop-shadow(-2px 2px #822F8A) drop-shadow(2px -2px #fff);
+        }
+      }
+    }
+  }
+
+  &.mystery {
+    .shopitem__left {
+      .shopitem__left__img {
+        & > svg {
+          filter: drop-shadow(2px 2px #D2FF01) drop-shadow(-2px 2px #822F8A) drop-shadow(2px -2px #fff);
+        }
+      }
+    }
+  }
+
+  &.mystery:hover {
+    .shopitem__left {
+      .shopitem__left__img {
+        & > svg {
+          filter: drop-shadow(2px 2px #D2FF01) drop-shadow(-2px 2px #822F8A) drop-shadow(2px -2px #fff);
         }
       }
     }
