@@ -11,7 +11,7 @@ export default function ShopItem({
   id, name, cost, nextCost, number, text, clickFlat, clickPercent, idleFlat, idlePercent,
 }) {
   const [isBuyable, setIsBuyable] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const dispatch = useDispatch();
   const knowledge = useSelector((state) => state.knowledge.knowledge);
 
@@ -47,7 +47,7 @@ export default function ShopItem({
 
   const handleModal = (event) => {
     event.stopPropagation();
-    setIsOpen(true);
+    setIsModalOpen(true);
   };
 
   useEffect(() => {
@@ -87,12 +87,12 @@ export default function ShopItem({
         </button>
         <p className="shopitem__right__number">x{number}</p>
       </div>
-      { isOpen && (
+      { isModalOpen && (
       <ShopItemDetail
         name={name}
         text={text}
         number={number}
-        setIsOpen={setIsOpen}
+        setIsModalOpen={setIsModalOpen}
         handleCost={handleCost}
         idleFlat={idleFlat}
         idlePercent={idlePercent}

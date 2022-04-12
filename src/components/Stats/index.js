@@ -1,6 +1,10 @@
+/* eslint-disable max-len */
 // npm imports
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
+
+// components imports
+import StatsItem from '../StatsItem';
 
 // assets imports
 import './style.css';
@@ -39,37 +43,25 @@ export default function Stats({ isOpen }) {
           {
             (isLogged && clickFlat[0].length !== 0)
             && clickFlat[0].map((elem) => (
-              <div className="item-block">
-                <div className="item-icon" />
-                <p className="item-number">{elem.number_owned}</p>
-              </div>
+              <StatsItem number={elem.number_owned} name={elem.name} text={elem.text} clickFlat={elem.clic_flat_value} />
             ))
           }
           {
             (isLogged && clickPercent[0].length !== 0)
             && clickPercent[0].map((elem) => (
-              <div className="item-block">
-                <div className="item-icon" />
-                <p className="item-number">{elem.number_owned}</p>
-              </div>
+              <StatsItem number={elem.number_owned} name={elem.name} text={elem.text} clickPercent={elem.clic_percent_value} />
             ))
           }
           {
             (isLogged && idleFlat[0].length !== 0)
             && idleFlat[0].map((elem) => (
-              <div className="item-block">
-                <div className="item-icon" />
-                <p className="item-number">{elem.number_owned}</p>
-              </div>
+              <StatsItem number={elem.number_owned} name={elem.name} text={elem.text} idleFlat={elem.idle_flat_value} />
             ))
           }
           {
             (isLogged && idlePercent[0].length !== 0)
             && idlePercent[0].map((elem) => (
-              <div className="item-block">
-                <div className="item-icon" />
-                <p className="item-number">{elem.number_owned}</p>
-              </div>
+              <StatsItem number={elem.number_owned} name={elem.name} text={elem.text} idlePercent={elem.idle_percent_value} />
             ))
           }
         </div>

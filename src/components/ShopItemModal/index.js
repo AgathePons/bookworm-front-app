@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import './style.css';
 
 export default function ShopItemDetail({
-  name, number, text, handleCost, setIsOpen, clickFlat, clickPercent, idleFlat, idlePercent,
+  name, number, text, handleCost, setIsModalOpen, clickFlat, clickPercent, idleFlat, idlePercent,
 }) {
   const handleClick = (event) => {
     event.stopPropagation();
-    setIsOpen(false);
+    setIsModalOpen(false);
   };
 
   const handleBonus = () => {
@@ -40,7 +40,7 @@ export default function ShopItemDetail({
             <p>BONUS: {handleBonus()}</p>
           </div>
           <div className="shoitemdetail__footer">
-            <p>{handleCost()}</p>
+            <p>{handleCost && handleCost()}</p>
             <p>{number}</p>
           </div>
         </div>
@@ -52,8 +52,8 @@ export default function ShopItemDetail({
 ShopItemDetail.propTypes = {
   name: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
-  handleCost: PropTypes.func.isRequired,
-  setIsOpen: PropTypes.func.isRequired,
+  handleCost: PropTypes.func,
+  setIsModalOpen: PropTypes.func.isRequired,
   number: PropTypes.number,
   idleFlat: PropTypes.number,
   idlePercent: PropTypes.number,
@@ -63,6 +63,7 @@ ShopItemDetail.propTypes = {
 
 ShopItemDetail.defaultProps = {
   number: 0,
+  handleCost: null,
   idleFlat: null,
   idlePercent: null,
   clickFlat: null,
