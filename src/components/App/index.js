@@ -26,6 +26,7 @@ function App() {
 
   useInterval(() => {
     if (isLogged) {
+      console.log('partie sauvegardé!');
       dispatch(saveUserStats());
     }
   }, 1000 * 60);
