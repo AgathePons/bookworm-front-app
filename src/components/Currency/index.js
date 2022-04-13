@@ -1,11 +1,11 @@
-import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 
-export default function Currency({ counter }) {
+import convertToReadable from '../../selectors';
+
+export default function Currency() {
+  const knowledge = useSelector((state) => state.knowledge.knowledge);
+  const readableKnowledge = convertToReadable(knowledge);
   return (
-    <div className="currency">{counter}</div>
+    <div className="currency">{readableKnowledge}</div>
   );
 }
-
-Currency.propTypes = {
-  counter: PropTypes.string.isRequired,
-};

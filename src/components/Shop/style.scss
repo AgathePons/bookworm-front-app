@@ -98,3 +98,9 @@
 .shop__container-hidden {
   display: none;
 }
+
+@media screen and (min-width: 1366px) {
+  .shop__container {
+    margin: 1rem;
+  }
+}
