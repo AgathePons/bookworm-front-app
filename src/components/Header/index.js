@@ -9,8 +9,6 @@ import useInterval from '../../hooks/useInterval';
 import Currency from '../Currency';
 import CurrencyPerSecond from '../CurrencyPerSecond';
 
-import convertToReadable from '../../selectors';
-
 // assets import
 import './style.scss';
 
@@ -23,12 +21,10 @@ function Header() {
     dispatch(addKnowledgePerSecond());
   }, 1000);
 
-  const readableKnowledge = convertToReadable(knowledge);
-
   return (
     <div className="header">
       <h3 className="header__title">Knowledge</h3>
-      <Currency counter={readableKnowledge} />
+      <Currency counter={knowledge} />
       <CurrencyPerSecond idleCounter={knowledgePerSecond} />
     </div>
   );

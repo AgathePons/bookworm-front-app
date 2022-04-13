@@ -7,7 +7,6 @@ import {
   SAVE_USER_STATS,
   resetState,
   DISCONNECT_USER,
-  CHECK_USER,
 } from 'src/actions/user';
 
 import { loadAllKnowledgeFromUser, resetKnowledge } from '../actions/knowledge';
@@ -27,6 +26,7 @@ const user = (store) => (next) => (action) => {
               authorization: `Bearer ${token}`,
             },
           });
+
           if (response.status === 204) {
             store.dispatch(resetState());
             store.dispatch(resetKnowledge());
@@ -57,7 +57,7 @@ const user = (store) => (next) => (action) => {
               authorization: `Bearer ${token}`,
             },
           });
-          console.log(response);
+
           if (response.status === 200) {
             store.dispatch(resetState());
             store.dispatch(resetKnowledge());
@@ -84,8 +84,9 @@ const user = (store) => (next) => (action) => {
             password: loginPassword,
           });
 
+          // if we want to add the JWToken to localStorage
+          // to autolog user when he comes back to the app
           // localStorage.setItem('token', response.data.token);
-          console.log(response.data);
           store.dispatch(saveUser(response.data));
           store.dispatch(loadAllKnowledgeFromUser(response.data.playerSave));
           store.dispatch(loadShopContentFromUser(response.data.playerSave));
@@ -117,6 +118,9 @@ const user = (store) => (next) => (action) => {
             password: password,
             passwordConfirm: passwordConfirm,
           });
+
+          // if we want to add the JWToken to localStorage
+          // to autolog user when he comes back to the app
 
           // localStorage.setItem('token', response.data.token);
 
@@ -152,7 +156,6 @@ const user = (store) => (next) => (action) => {
           });
 
           store.dispatch(loadAllKnowledgeFromUser(response.data.playerSave));
-          console.log(response.data);
         }
         catch (error) {
           console.log(error);
@@ -163,12 +166,15 @@ const user = (store) => (next) => (action) => {
 
       break;
     }
+    // if we want to add the JWToken to localStorage to autolog user when he comes back to the app
+    // we need to: import CHECK_USER from src/actions/user
 
     // case CHECK_USER: {
     //   const token = localStorage.getItem('token');
 
     //   const checkForUser = async () => {
     //     try {
+    //  need to modify the api url
     //       const response = await axios.get('http://localhost:8000/api/playerAccount', {
     //         headers: {
     //           authorization: `Bearer ${token}`,
