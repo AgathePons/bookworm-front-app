@@ -2,9 +2,8 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-// custom hooks import
-
 // action creators import
+import { setDesktopFalse, setDesktopTrue } from 'src/actions/desktop';
 import { checkUser, saveUserStats, disconnectUser } from 'src/actions/user';
 import useInterval from '../../hooks/useInterval';
 
@@ -44,6 +43,28 @@ function App() {
     return () => {
       window.removeEventListener('beforeunload', onWindowCloseOrRefresh);
     };
+  }, []);
+
+  useEffect(() => {
+    function handleResize() {
+      if (window.innerWidth >= 1366) {
+        dispatch(setDesktopTrue());
+      }
+      else if (window.innerWidth <= 1366) {
+        dispatch(setDesktopFalse());
+      }
+    }
+
+    window.addEventListener('resize', handleResize);
+  });
+
+  useEffect(() => {
+    if (window.innerWidth >= 1366) {
+      dispatch(setDesktopTrue());
+    }
+    else if (window.innerWidth <= 1366) {
+      dispatch(setDesktopFalse());
+    }
   }, []);
 
   useEffect(() => {
