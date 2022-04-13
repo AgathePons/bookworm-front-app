@@ -1,0 +1,9 @@
+.info__container {
+  display: flex;
+  flex-direction: column;
+  background-color: thistle;
+}
+
+.info__container-hidden {
+  display: none;
+}

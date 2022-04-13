@@ -7,12 +7,13 @@ import User from '../User';
 import Bookworm from '../Bookworm';
 import Stats from '../Stats';
 import Shop from '../Shop';
+import Info from '../Info';
 
 // assets import
 import './style.scss';
 
 export default function Modal({
-  title, setIsOpen, isOpen,
+  title, setIsOpen, isOpen, isDesktop,
 }) {
   function handleClick() {
     setIsOpen(false);
@@ -30,7 +31,7 @@ export default function Modal({
         <div className="modal__content">
           <Bookworm isOpen={title === 'bookworm'} />
           <Stats isOpen={title === 'stats'} />
-          <Shop isOpen={title === 'shop'} />
+          { isDesktop ? <Info isOpen={title === 'info'} /> : <Shop isOpen={title === 'shop'} />}
           <User isOpen={title === 'user'} />
         </div>
       </div>
@@ -42,4 +43,5 @@ Modal.propTypes = {
   title: PropTypes.string.isRequired,
   setIsOpen: PropTypes.func.isRequired,
   isOpen: PropTypes.bool.isRequired,
+  isDesktop: PropTypes.bool.isRequired,
 };

@@ -27,7 +27,6 @@ function App() {
 
   useInterval(() => {
     if (isLogged) {
-      console.log('je save');
       dispatch(saveUserStats());
     }
   }, 1000 * 60);

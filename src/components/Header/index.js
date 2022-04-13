@@ -1,31 +1,26 @@
 // npm imports
-import { useSelector, useDispatch } from 'react-redux';
-import { addKnowledgePerSecond } from 'src/actions/knowledge';
-
-// custom hooks import
-import useInterval from '../../hooks/useInterval';
+import { useSelector } from 'react-redux';
 
 // components import
 import Currency from '../Currency';
 import CurrencyPerSecond from '../CurrencyPerSecond';
+import Shop from '../Shop';
 
 // assets import
 import './style.scss';
 
 function Header() {
-  const dispatch = useDispatch();
-  const knowledge = useSelector((state) => state.knowledge.knowledge);
-  const knowledgePerSecond = useSelector((state) => state.knowledge.knowledgePerSecond);
-
-  useInterval(() => {
-    dispatch(addKnowledgePerSecond());
-  }, 1000);
+  const isDesktop = useSelector((state) => state.desktop.isDesktop);
+  const isOpen = true;
 
   return (
-    <div className="header">
-      <h3 className="header__title">Knowledge</h3>
-      <Currency counter={knowledge} />
-      <CurrencyPerSecond idleCounter={knowledgePerSecond} />
+    <div className="bigheader">
+      <div className="header">
+        <h3 className="header__title">Knowledge</h3>
+        <Currency />
+        <CurrencyPerSecond />
+      </div>
+      {isDesktop && <Shop isOpen={isOpen} />}
     </div>
   );
 }
