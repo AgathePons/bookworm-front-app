@@ -2,7 +2,7 @@
   z-index: 0;
   background-color: rgba(32, 2, 32, .5);
   position: relative;
-  margin-bottom: -90px;
+  margin-bottom: -93px;
   padding: 0.5rem;
   width: 100%;
   transition: all .3s cubic-bezier(0.17, 0.84, 0.44, 1);
@@ -104,6 +104,7 @@
 .snaps-inline {
   scroll-snap-type: inline mandatory;
   scroll-padding-inline: 1rem;
+  height: 100px;
 }
 
 .snaps-inline > * {
