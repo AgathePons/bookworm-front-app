@@ -31,7 +31,7 @@ function UserInfo() {
         <button className="user__form__save__button" type="button" onClick={handleSave}>save</button>
         <button className="user__form__disconnect__button" type="button" onClick={handleDisconnect}>disconnect</button>
       </div>
-      <div className="user__form">
+      <div className="user__form user__form__delete">
         <p className="user__form__warning">You're about to delete your account FOREVER !</p>
         <button type="button" className="user__form__delete__button" onClick={handleDeleteAccount}>delete account</button>
       </div>
