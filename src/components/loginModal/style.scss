@@ -1,0 +1,56 @@
+.small-modal {
+  background-color: rgba(32, 2, 32, .7);
+
+  .small-modal-container {
+    .loginmodal {
+      max-width: 80%;
+      display: flex;
+      flex-direction: column;
+      background-color: #fff;
+      filter: drop-shadow(4px 4px #822F8A);
+      border-radius: 5px;
+      padding: 1rem;
+      overflow: hidden;
+
+      .loginmodal__header {
+        padding: 0.5rem;
+        display: flex;
+        color: black;
+        justify-content: space-between;
+        align-items: center;
+
+        &>p {
+          font-weight: 700;
+          font-size: 1.3rem;
+          text-transform: uppercase;
+        }
+
+        .loginmodal__header__btn {
+          width: 30px;
+          height: 30px;
+          padding: 0;
+          border: none;
+          background: none;
+
+          &>svg {
+            fill: #200220;
+          }
+        }
+      }
+
+      .loginmodal__body {
+        padding: 1rem;
+        
+        color: black;
+        &>p {
+          text-align: left;
+          font-size: 1.3rem;
+          line-height: 1.4;
+          &>span {
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+}
