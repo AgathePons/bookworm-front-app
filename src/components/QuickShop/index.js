@@ -21,7 +21,7 @@ export default function QuickShop({ visible, handleClick }) {
       <div className="quickshop" onClick={handleClick}>
         Quickshop
       </div>
-      <div className="quickshop__block snaps-inline" style={visible ? { display: 'flex' } : { display: 'none' }}>
+      <div className={visible ? 'quickshop__block snaps-inline' : 'quickshop__block quickshop-closed'}>
         {
           clickFlat[0].length !== 0
             ? clickFlat[0].map((e) => <QuickShopItem key={e.id} id={e.id} cost={e.starting_cost} nextCost={e.next_cost} />)

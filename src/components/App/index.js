@@ -63,7 +63,7 @@ function App() {
       dispatch(setDesktopTrue());
     }
     else if (window.innerWidth <= 1366) {
-      dispatch(setDesktopFalse);
+      dispatch(setDesktopFalse());
     }
   }, []);
 
