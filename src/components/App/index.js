@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 // custom hooks import
 
 // action creators import
-import { checkUser, saveUserStats } from 'src/actions/user';
+import { checkUser, saveUserStats, disconnectUser } from 'src/actions/user';
 import useInterval from '../../hooks/useInterval';
 
 // components import
@@ -35,6 +35,17 @@ function App() {
   const handleVisible = () => {
     setVisible(!visible);
   };
+
+  useEffect(() => {
+    const onWindowCloseOrRefresh = () => {
+      dispatch(disconnectUser());
+    };
+
+    window.addEventListener('beforeunload', onWindowCloseOrRefresh);
+    return () => {
+      window.removeEventListener('beforeunload', onWindowCloseOrRefresh);
+    };
+  }, []);
 
   useEffect(() => {
     dispatch(checkUser());

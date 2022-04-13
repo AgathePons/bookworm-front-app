@@ -25,6 +25,10 @@ export default function convertToReadable(value = 0) {
     unit = 'Q';
     modifiedNumber = (value / 1e15).toString().match(regex);
   }
+  else if (value >= 1e18 && value < 1e21) {
+    unit = 'Q';
+    modifiedNumber = (value / 1e18).toString().match(regex);
+  }
 
   const numberToString = modifiedNumber.toString();
 
