@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 
 // components import
 import QuickShop from '../QuickShop';
@@ -8,10 +9,11 @@ import Buttons from '../Buttons';
 import './style.css';
 
 export default function Container({ visible, handleClick }) {
+  const isDesktop = useSelector((state) => state.desktop.isDesktop);
   return (
     <div className="container">
       <Buttons />
-      <QuickShop visible={visible} handleClick={handleClick} />
+      {!isDesktop && <QuickShop visible={visible} handleClick={handleClick} />}
     </div>
   );
 }
