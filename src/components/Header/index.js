@@ -8,10 +8,10 @@ import Shop from '../Shop';
 
 // assets import
 import './style.scss';
+import ShopContainer from '../ShopContainer';
 
 function Header() {
   const isDesktop = useSelector((state) => state.desktop.isDesktop);
-  const isOpen = true;
 
   return (
     <div className="bigheader">
@@ -20,7 +20,7 @@ function Header() {
         <Currency />
         <CurrencyPerSecond />
       </div>
-      {isDesktop && <Shop isOpen={isOpen} />}
+      {isDesktop && <ShopContainer />}
     </div>
   );
 }
