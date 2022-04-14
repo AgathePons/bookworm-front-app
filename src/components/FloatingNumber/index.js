@@ -7,10 +7,10 @@ export default function FloatingNumber({ x, y, value }) {
       className="floating-number"
       style={{
         position: 'absolute',
-        top: `calc(${y}px - 30px)`,
-        left: `calc(${x}px - 10px)`,
+        top: `calc(${y}px - 2rem)`,
+        left: `calc(${x}px - 2rem)`,
         zIndex: '1',
-        animation: 'floating_fade 1.5s cubic-bezier(0.17, 0.84, 0.44, 1) 0s 1',
+        animation: 'floating_fade 1.5s cubic-bezier(0.17, 0.84, 0.44, 1) 0s 1 forwards',
       }}
     >
       +{value}
