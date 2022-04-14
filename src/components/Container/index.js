@@ -8,6 +8,7 @@ import Buttons from '../Buttons';
 import './style.css';
 
 export default function Container({ visible, handleClick }) {
+  console.log('container')
   return (
     <div className="container">
       <Buttons />

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addKnowledgePerClick } from 'src/actions/knowledge';
 import { useIntervalWhen } from 'rooks';
@@ -14,22 +14,23 @@ import './style.scss';
 function Book() {
   const dispatch = useDispatch();
   const [floating, setFloating] = useState([]);
-  const { knowledgePerClick } = useSelector((state) => state.knowledge);
+  const knowledgePerClick = useSelector((state) => state.knowledge.knowledgePerClick);
 
   useIntervalWhen(() => {
     if (floating.length !== 0) {
       const floatingCopy = [...floating];
-      floatingCopy.pop();
+      floatingCopy.shift();
       setFloating(floatingCopy);
     }
-  }, 1500, floating.length !== 0);
+  }, 1000, floating.length !== 0);
 
   const handleBookClick = (e) => {
     const newFloating = [...floating];
 
-    if (newFloating.length === 10) newFloating.pop();
-
-    newFloating.unshift({ x: e.clientX, y: e.clientY, value: knowledgePerClick });
+    if (newFloating.length === 10) newFloating.shift();
+    newFloating.push({
+      key: uuidv4(), x: e.clientX, y: e.clientY, value: knowledgePerClick,
+    });
     setFloating(newFloating);
 
     dispatch(addKnowledgePerClick());
@@ -44,7 +45,7 @@ function Book() {
     return arr.map(
       (elem) => (
         <FloatingNumber
-          key={uuidv4()}
+          key={elem.key}
           x={elem.x}
           y={elem.y}
           value={convertToReadable(elem.value)}
@@ -54,12 +55,14 @@ function Book() {
   };
 
   return (
-    <div className="book" onClick={handleBookClick}>
+    <>
       {createFloating(floating)}
-      <div className="book__visual">
-        <img className="book__visual__img" src={book} alt="livre à cliquer" />
+      <div className="book" onClick={handleBookClick}>
+        <div className="book__visual">
+          <img className="book__visual__img" src={book} alt="livre à cliquer" />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

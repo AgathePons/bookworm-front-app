@@ -1,8 +1,8 @@
 .floating-number {
   font-weight: 700;
   font-size: 1.5rem;
-  //animation: floating_fade .5s timing-function delay iteration-count direction fill-mode;
-  //animation: floating_fade 1.5s cubic-bezier(0.17, 0.84, 0.44, 1) 0s 1;
+  // animation: floating_fade .5s timing-function delay iteration-count direction fill-mode forwards;
+  // animation: floating_fade 1.5s cubic-bezier(0.17, 0.84, 0.44, 1) 0s 1 forwards;
 }
 
 @keyframes floating_fade {
