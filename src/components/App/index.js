@@ -14,7 +14,7 @@ import Container from '../Container';
 import LoginModal from '../loginModal';
 
 // assets import
-import './style.css';
+import './style.scss';
 
 function App() {
   const dispatch = useDispatch();
