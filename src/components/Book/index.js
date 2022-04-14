@@ -59,9 +59,11 @@ function Book() {
   return (
     <>
       {createFloating(floating)}
-      {knowledgePerSecond && <img className="worm" src={WormIcon} alt="un ver" />}
-      <div className="book__visual">
-        <img className="book__visual__img" src={book} alt="livre à cliquer" />
+      <div className="book" onClick={handleBookClick}>
+        {knowledgePerSecond && <img className="worm" src={WormIcon} alt="un ver" />}
+        <div className="book__visual">
+          <img className="book__visual__img" src={book} alt="livre à cliquer" />
+        </div>
       </div>
     </>
   );
