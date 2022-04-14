@@ -2,7 +2,7 @@
   z-index: 0;
   background-color: rgba(32, 2, 32, .5);
   position: relative;
-  margin-bottom: -93px;
+  margin-bottom: -83px;
   padding: 0.5rem;
   width: 100%;
   transition: all .3s cubic-bezier(0.17, 0.84, 0.44, 1);
@@ -31,7 +31,7 @@
     position: relative;
     & > svg {
       position: absolute;
-      top: -28px;
+      top: -25px;
       left: calc(50% - 14px);
       transform: rotate(180deg);
       width: 28px;
@@ -50,10 +50,9 @@
 }
 
 .quickshop__block {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 21%;
-
+  display: flex;
+  gap: 1.2rem;
+  overflow-y: hidden;
   overflow-x: auto;
   overscroll-behavior-inline: contain;
   -ms-overflow-style: none;  /* IE and Edge */
@@ -69,6 +68,7 @@
       linear-gradient(to bottom left, #ff0, #a6ff01);
         filter: drop-shadow(3px 3px #6CF5C6) drop-shadow(3px 3px 2px #000);
         border-radius: 7px;
+        width: 50px;
         padding: .4rem;
         transition: all .3s cubic-bezier(0.17, 0.84, 0.44, 1);
         & > svg {
@@ -104,7 +104,6 @@
 .snaps-inline {
   scroll-snap-type: inline mandatory;
   scroll-padding-inline: 1rem;
-  height: 100px;
 }
 
 .snaps-inline > * {
