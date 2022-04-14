@@ -7,6 +7,7 @@ import { v4 as uuidv4 } from 'uuid';
 import FloatingNumber from 'src/components/FloatingNumber';
 
 import book from 'src/assets/images/Book.gif';
+import WormIcon from 'src/assets/images/Worm.gif';
 import convertToReadable from '../../selectors';
 
 import './style.scss';
@@ -15,6 +16,7 @@ function Book() {
   const dispatch = useDispatch();
   const [floating, setFloating] = useState([]);
   const { knowledgePerClick } = useSelector((state) => state.knowledge);
+  const knowledgePerSecond = useSelector((state) => state.knowledge.knowledgePerSecond);
 
   useIntervalWhen(() => {
     if (floating.length !== 0) {
@@ -56,6 +58,7 @@ function Book() {
   return (
     <div className="book" onClick={handleBookClick}>
       {createFloating(floating)}
+      {knowledgePerSecond && <img className="worm" src={WormIcon} alt="un ver" />}
       <div className="book__visual">
         <img className="book__visual__img" src={book} alt="livre à cliquer" />
       </div>

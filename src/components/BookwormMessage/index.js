@@ -1,3 +1,5 @@
+import WormIcon from 'src/assets/images/Worm.gif';
+
 import './style.scss';
 
 function BookwormMessage({ text }) {
@@ -5,7 +7,7 @@ function BookwormMessage({ text }) {
     <div className="bookworm__message">
       <img
         className="bookworm__message__img"
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRo0qCDG2RAIWCuCB3N6ml2f__w1F3gE9OJFQ&usqp=CAU"
+        src={WormIcon}
         alt="un vert vert avec des yeux"
       />
       <div className="bookworm__message__block">
