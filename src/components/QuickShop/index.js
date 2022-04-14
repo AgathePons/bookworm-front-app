@@ -9,7 +9,7 @@ import './style.scss';
 
 export default function QuickShop({ visible, handleClick }) {
   const { generatorsOwned } = useSelector((state) => state.shop);
-  const isDesktop = useSelector((state) => state.desktop.isDesktop);
+
   const {
     clickFlat,
     clickPercent,
