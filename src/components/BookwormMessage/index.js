@@ -1,8 +1,10 @@
+import PropTypes from 'prop-types';
+
 import WormIcon from 'src/assets/images/Worm.gif';
 
 import './style.scss';
 
-function BookwormMessage({ text }) {
+export default function BookwormMessage({ text }) {
   return (
     <div className="bookworm__message">
       <img
@@ -17,4 +19,6 @@ function BookwormMessage({ text }) {
   );
 }
 
-export default BookwormMessage;
+BookwormMessage.propTypes = {
+  text: PropTypes.string.isRequired,
+};
