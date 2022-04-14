@@ -3,6 +3,7 @@ export const GET_FIRST_SENTENCE = 'GET_FIRST_SENTENCE';
 export const SAVE_FIRST_SENTENCE = 'SAVE_FIRST_SENTENCE';
 export const GET_RANDOM_SENTENCE = 'GET_RANDOM_SENTENCE';
 export const SAVE_RANDOM_SENTENCE = 'SAVE_RANDOM_SENTENCE';
+export const RESET_BOOKWORM_STATE = 'RESET_BOOKWORM_STATE';
 
 // ACTION CREATOR
 
@@ -22,4 +23,8 @@ export const getRandomSentence = () => ({
 export const saveRandomSentence = (payload) => ({
   type: SAVE_RANDOM_SENTENCE,
   payload: payload,
+});
+
+export const resetBookwormState = () => ({
+  type: RESET_BOOKWORM_STATE,
 });

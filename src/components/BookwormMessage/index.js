@@ -20,5 +20,9 @@ export default function BookwormMessage({ text }) {
 }
 
 BookwormMessage.propTypes = {
-  text: PropTypes.string.isRequired,
+  text: PropTypes.string,
+};
+
+BookwormMessage.defaultProps = {
+  text: '',
 };

@@ -8,10 +8,9 @@ import {
   resetState,
   DISCONNECT_USER,
 } from 'src/actions/user';
-
-import { loadAllKnowledgeFromUser, resetKnowledge } from '../actions/knowledge';
-
-import { loadShopContentFromUser } from '../actions/shop';
+import { resetBookwormState } from 'src/actions/bookworm';
+import { loadAllKnowledgeFromUser, resetKnowledge } from 'src/actions/knowledge';
+import { loadShopContentFromUser } from 'src/actions/shop';
 
 const user = (store) => (next) => (action) => {
   switch (action.type) {
@@ -87,9 +86,12 @@ const user = (store) => (next) => (action) => {
           // if we want to add the JWToken to localStorage
           // to autolog user when he comes back to the app
           // localStorage.setItem('token', response.data.token);
-          store.dispatch(saveUser(response.data));
-          store.dispatch(loadAllKnowledgeFromUser(response.data.playerSave));
-          store.dispatch(loadShopContentFromUser(response.data.playerSave));
+          if (response.status === 200) {
+            store.dispatch(saveUser(response.data));
+            store.dispatch(loadAllKnowledgeFromUser(response.data.playerSave));
+            store.dispatch(loadShopContentFromUser(response.data.playerSave));
+            store.dispatch(resetBookwormState());
+          }
         }
         catch (error) {
           console.log(error);
