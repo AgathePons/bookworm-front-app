@@ -10,10 +10,11 @@ import './style.css';
 
 export default function Container({ visible, handleClick }) {
   const isDesktop = useSelector((state) => state.desktop.isDesktop);
+  const isLogged = useSelector((state) => state.user.isLogged);
   return (
     <div className="container">
       <Buttons />
-      {!isDesktop && <QuickShop visible={visible} handleClick={handleClick} />}
+      {(!isDesktop && isLogged) && <QuickShop visible={visible} handleClick={handleClick} />}
     </div>
   );
 }
