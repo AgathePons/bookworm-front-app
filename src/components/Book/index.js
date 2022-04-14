@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addKnowledgePerClick } from 'src/actions/knowledge';
 import { useIntervalWhen } from 'rooks';

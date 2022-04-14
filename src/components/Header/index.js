@@ -12,7 +12,7 @@ import './style.scss';
 function Header() {
   const isDesktop = useSelector((state) => state.desktop.isDesktop);
   const isOpen = true;
-  console.log('header')
+
   return (
     <div className="bigheader">
       <div className="header">
