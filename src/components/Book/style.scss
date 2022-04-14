@@ -6,6 +6,30 @@
   align-items: center;
 }
 
+.worm {
+  width:30px;
+  height:30px;
+  position:absolute;
+  margin:auto;
+  animation: circle 10s linear infinite;
+}
+
+@keyframes circle{
+  0%{
+    transform:rotate(0deg)
+              translate(-145px)
+              rotate(0deg);
+  
+  }
+  100%{
+    transform:rotate(360deg)
+              translate(-145px)
+              rotate(-360deg);
+  }
+}
+
+
+
 .book__visual {
   background-color: transparent;
   width: 50px;

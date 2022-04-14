@@ -1,6 +1,5 @@
 // npm import
 import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
 
 // components import
 import User from '../User';
