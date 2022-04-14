@@ -1,16 +1,16 @@
 import axios from 'axios';
 import {
   DELETE_ACCOUNT,
+  DISCONNECT_USER,
   LOGIN,
   REGISTER_USER,
-  saveUser,
   SAVE_USER_STATS,
   resetState,
-  DISCONNECT_USER,
+  saveUser,
 } from 'src/actions/user';
 import { resetBookwormState } from 'src/actions/bookworm';
 import { loadAllKnowledgeFromUser, resetKnowledge } from 'src/actions/knowledge';
-import { loadShopContentFromUser } from 'src/actions/shop';
+import { loadShopContentFromUser, resetShopState } from 'src/actions/shop';
 
 const user = (store) => (next) => (action) => {
   switch (action.type) {
@@ -60,6 +60,7 @@ const user = (store) => (next) => (action) => {
           if (response.status === 200) {
             store.dispatch(resetState());
             store.dispatch(resetKnowledge());
+            store.dispatch(resetShopState());
           }
         }
         catch (error) {
@@ -129,6 +130,7 @@ const user = (store) => (next) => (action) => {
           store.dispatch(saveUser(response.data));
           store.dispatch(loadAllKnowledgeFromUser(response.data.playerSave));
           store.dispatch(loadShopContentFromUser(response.data.playerSave));
+          store.dispatch(resetBookwormState());
         }
         catch (error) {
           // TODO

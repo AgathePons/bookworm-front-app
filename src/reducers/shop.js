@@ -1,4 +1,4 @@
-import { LOAD_SHOP_CONTENT_FROM_USER } from '../actions/shop';
+import { LOAD_SHOP_CONTENT_FROM_USER, RESET_SHOP_STATE } from '../actions/shop';
 
 export const initialState = {
   generatorsNotOwned: {
@@ -33,6 +33,11 @@ const reducer = (state = initialState, action = {}) => {
           idleFlat: [generatorsOwned.idleFlat],
           idlePercent: [generatorsOwned.idlePercent],
         },
+      };
+    }
+    case RESET_SHOP_STATE: {
+      return {
+        ...initialState,
       };
     }
     default:
