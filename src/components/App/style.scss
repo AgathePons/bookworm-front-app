@@ -9,6 +9,8 @@
   linear-gradient(to bottom left, #33cfeb, #822F8A);
   background-attachment: fixed;
   overflow: hidden;
+
+  // animation: rotate_hue 1s linear 1s infinite alternate;
 }
 
 .app__header {
@@ -19,6 +21,16 @@
   justify-content: space-between;
   color: #fff;
 }
+
+@keyframes rotate_hue {
+  0% {
+    filter: hue-rotate(360deg);
+  }
+ 
+  100% {
+    filter: hue-rotate(-360deg);
+  }
+ }
 
 /* 
 Résolution desktop: 1366x768

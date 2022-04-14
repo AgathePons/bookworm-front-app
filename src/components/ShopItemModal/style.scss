@@ -15,11 +15,11 @@
 
     .shopitemdetail {
       position: relative;
-      width: 300px;
       background-color: #fff;
       filter: drop-shadow(4px 4px #822F8A);
       border-radius: 5px;
       padding: 1rem;
+      margin: 0 1rem;
 
       .shopitemdetail__header {
         display: flex;
@@ -55,13 +55,26 @@
           }
         }
       }
+
+      .shopitemdetail__body {
+        padding: 1.5rem 0 0 0;
+        [class^='shopitemdetail__body__'] {
+          margin-bottom: .5rem;
+          text-align: left;
+          font-size: 1.2rem;
+          line-height: 1.4;
+          display: flex;
+          justify-content: space-between;
+          .bonus--pre {
+
+          }
+          .bonus--post {
+            font-weight: 700;
+          }
+        }
+      }
     }
   }
-}
-
-
-.shopitemdetail__body {
-  border: 1px solid rgb(13, 179, 13);
 }
 
 .shopitemdetail__footer {

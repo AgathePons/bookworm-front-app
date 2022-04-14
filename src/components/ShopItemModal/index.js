@@ -11,18 +11,33 @@ export default function ShopItemModal({
     setIsModalOpen(false);
   };
 
-  const handleBonus = () => {
+  const handleBonusTotal = () => {
     if (clickFlat) {
-      return `+${clickFlat}/click`;
+      return `+${clickFlat * number} knowledge / click`;
     }
     if (clickPercent) {
-      return `${clickPercent}%/click`;
+      return `${clickFlat * number}% knowledge / click`;
     }
     if (idleFlat) {
-      return `+${idleFlat}/s`;
+      return `+${clickFlat * number} knowledge / s`;
     }
     if (idlePercent) {
-      return `${idlePercent}%/s`;
+      return `${clickFlat * number}% knowledge /s`;
+    }
+    return null;
+  };
+  const handleBonus = () => {
+    if (clickFlat) {
+      return `+${clickFlat} knowledge / click`;
+    }
+    if (clickPercent) {
+      return `${clickPercent}% knowledge / click`;
+    }
+    if (idleFlat) {
+      return `+${idleFlat} knowledge / s`;
+    }
+    if (idlePercent) {
+      return `${idlePercent}% knowledge /s`;
     }
     return null;
   };
@@ -41,12 +56,23 @@ export default function ShopItemModal({
             </button>
           </div>
           <div className="shopitemdetail__body">
-            <p>{text}</p>
-            <p>BONUS: {handleBonus()}</p>
-          </div>
-          <div className="shopitemdetail__footer">
-            <p>{handleCost && convertToReadable(handleCost())}</p>
-            <p>{number}</p>
+            <p className="shopitemdetail__body__description">{text}</p>
+            <p className="shopitemdetail__body__bonus">
+              <span className="bonus--pre">Bonus:</span>
+              <span className="bonus--post">{handleBonus()}</span>
+            </p>
+            <p className="shopitemdetail__body__bonus">
+              <span className="bonus--pre">Total:</span>
+              <span className="bonus--post">{handleBonusTotal()}</span>
+            </p>
+            <p className="shopitemdetail__body__bonus">
+              <span className="bonus--pre">Number owned:</span>
+              <span className="bonus--post">{number}</span>
+            </p>
+            <p className="shopitemdetail__body__bonus">
+              <span className="bonus--pre">Cost:</span>
+              <span className="bonus--post">{handleCost && convertToReadable(handleCost())}</span>
+            </p>
           </div>
         </div>
       </div>
