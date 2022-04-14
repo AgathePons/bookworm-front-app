@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 // components import
 import Currency from '../Currency';
 import CurrencyPerSecond from '../CurrencyPerSecond';
-import Shop from '../Shop';
 
 // assets import
 import './style.scss';
