@@ -19,7 +19,7 @@ export default function UserForm() {
   const handleInputChange = (event) => {
     dispatch(changeUserFormsField(event.target.value, event.target.name));
   };
-  //                   !!!!!!!!!!!!              //
+
   const handleLoginSubmit = (event) => {
     event.preventDefault();
     dispatch(login());
@@ -29,7 +29,7 @@ export default function UserForm() {
     event.preventDefault();
     dispatch(registerUser());
   };
-  //                 !!!!!!!!        fin //
+
   return (
     <>
       <div className="user__login">
