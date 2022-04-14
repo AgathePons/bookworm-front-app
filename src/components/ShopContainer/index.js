@@ -1,6 +1,6 @@
 import Shop from '../Shop';
 
-import './style.css';
+import './style.scss';
 
 export default function ShopContainer() {
   const isOpen = true;

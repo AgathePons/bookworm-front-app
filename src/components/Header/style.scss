@@ -24,11 +24,25 @@
 @media screen and (min-width: 1366px) {
 
   .bigheader {
-    width: 25%;
+    position: absolute;
+    top: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    .header {
+      height: 130px;
+      margin-bottom: 1rem;
+    }
+
+    .shopcontainer {
+      height: calc(100% - 130px - 1rem);
+    }
   }
-  .header {
-    margin-left: 1rem;
-  }
+  
   .header:last-child {
     display: none;
   }
