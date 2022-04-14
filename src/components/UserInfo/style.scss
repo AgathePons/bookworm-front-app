@@ -113,7 +113,10 @@
   background-color: #fff;
   filter: drop-shadow(4px 4px #822F8A);
   border-radius: 5px;
-  padding: 2rem;
+  padding: 1rem;
+  height: 150px;
+  position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -128,6 +131,42 @@
     background-color: #822F8A;
     font-weight: bold;
     padding: 1rem;
+  }
+  .user__form__delete__confirm {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    justify-content: center;
+    background-color: #fff;
+
+    .confirm-refuse-button {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      [class^='button-'] {
+        width: 100%;
+        font-size: 1rem;
+        padding: .5rem;
+        border: none;
+        color: #fff;
+        &:not(:last-child) {
+          margin-bottom: .5rem;
+        }
+      }
+      .button-confirm {
+        background-color: #fff;
+        color: #822f8a;
+        border: 1px solid #822f8a;
+      }
+      .button-refuse {
+        background-color: #822f8a;
+      }
+    }
   }
 }
 

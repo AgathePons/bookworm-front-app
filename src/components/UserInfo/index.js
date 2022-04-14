@@ -42,14 +42,15 @@ function UserInfo() {
         <button className="user__form__disconnect__button" type="button" onClick={handleDisconnect}>disconnect</button>
       </div>
       <div className="user__form user__form__delete">
+        <p className="user__form__warning">You will miss your little Bookworm... 😦</p>
         {
           isDeleteClicked
             ? (
-              <div className="user__form user__form__delete">
+              <div className="user__form user__form__delete__confirm">
                 <p className="user__form__warning">You're about to delete your account FOREVER !</p>
                 <div className="confirm-refuse-button">
-                  <button type="button" className="confirm-button" onClick={handleDeleteAccount}>yes</button>
-                  <button type="button" className="refuse-button" onClick={handleRefuseClick}>no</button>
+                  <button type="button" className="button-refuse" onClick={handleRefuseClick}>Uuuh maybe I will stay</button>
+                  <button type="button" className="button-confirm" onClick={handleDeleteAccount}>Yes, I know! Goodbye</button>
                 </div>
               </div>
             )

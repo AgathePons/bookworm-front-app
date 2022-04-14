@@ -9,6 +9,10 @@
   linear-gradient(to bottom left, #33cfeb, #822F8A);
   background-attachment: fixed;
   overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
   // animation: rotate_hue 1s linear 1s infinite alternate;
 }
