@@ -77,9 +77,10 @@
   .modal {
     position: absolute;
     width: 33%;
+    top: 1rem;
     bottom: 1rem;
-    left: 1rem;
-    top: 117px;
+    left: auto;
+    right: 6rem;
     .modal__content {
       height: calc(100% - 70px - 3rem);
     }

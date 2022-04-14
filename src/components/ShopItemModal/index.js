@@ -16,13 +16,13 @@ export default function ShopItemModal({
       return `+${clickFlat * number} knowledge / click`;
     }
     if (clickPercent) {
-      return `${clickFlat * number}% knowledge / click`;
+      return `${clickPercent * number}% knowledge / click`;
     }
     if (idleFlat) {
-      return `+${clickFlat * number} knowledge / s`;
+      return `+${idleFlat * number} knowledge / s`;
     }
     if (idlePercent) {
-      return `${clickFlat * number}% knowledge /s`;
+      return `${idlePercent * number}% knowledge /s`;
     }
     return null;
   };
