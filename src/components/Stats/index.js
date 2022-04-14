@@ -9,7 +9,7 @@ import StatsItem from '../StatsItem';
 import StatsKnowledge from '../StatsKnowledge';
 
 // assets imports
-import './style.css';
+import './style.scss';
 
 export default function Stats({ isOpen }) {
   const { isLogged } = useSelector((state) => state.user);
