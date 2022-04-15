@@ -14,7 +14,9 @@
   -ms-user-select: none;
   user-select: none;
 
-  // animation: rotate_hue 1s linear 1s infinite alternate;
+  &.konami {
+   animation: rotate_hue 1s linear 1s 20 alternate;
+ }
 }
 
 .app__header {

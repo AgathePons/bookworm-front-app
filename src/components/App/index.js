@@ -24,6 +24,7 @@ function App() {
   } = useSelector((state) => state.user);
   const [visible, setVisible] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isKonami, setIsKonami] = useState(false);
 
   useInterval(() => {
     if (isLogged) {
@@ -59,6 +60,21 @@ function App() {
     window.addEventListener('resize', handleResize);
   });
 
+  const pressed = [];
+  const secretCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+
+  useEffect(() => {
+    window.addEventListener('keyup', (e) => {
+      pressed.push(e.key);
+      pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
+      if (pressed.join('') === secretCode.join('')) {
+        setIsKonami(true);
+      } else {
+        setIsKonami(false);
+      }
+    });
+  });
+
   useEffect(() => {
     if (window.innerWidth >= 1366) {
       dispatch(setDesktopTrue());
@@ -76,7 +92,7 @@ function App() {
   }, [isLogged]);
 
   return (
-    <div className="app">
+    <div className={isKonami ? 'app konami ' : 'app'}>
       <div className="app__header">
         <Header />
         <Book />
