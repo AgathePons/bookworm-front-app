@@ -8,7 +8,7 @@ export default function StatsKnowledge() {
   const totalOfClicks = useSelector((state) => state.knowledge.totalOfClicks);
   return (
     <div className="stats__container__block">
-      <p className="stat__container__block__name">Total knowledge earned:</p>
+      <p className="stat__container__block__name">Knowledge owned:</p>
       <p className="stat__container__block__value">{convertToReadable(knowledge)}</p>
       <p className="stat__container__block__name">Total clicks:</p>
       <p className="stat__container__block__value">{totalOfClicks}</p>
@@ -16,6 +16,7 @@ export default function StatsKnowledge() {
       <p className="stat__container__block__value">{convertToReadable(knowledgePerSecond)}</p>
       <p className="stat__container__block__name">Knowledge per click:</p>
       <p className="stat__container__block__value">{convertToReadable(knowledgePerClick)}</p>
+      <p className="stat__container__block__name">Upgrades bought:</p>
     </div>
   );
 }
