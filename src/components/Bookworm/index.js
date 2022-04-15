@@ -18,8 +18,10 @@ export default function Bookworm({ isOpen }) {
   const { isLogged } = useSelector((state) => state.user);
 
   useEffect(() => {
-    dispatch(getFirstSentence());
-  }, []);
+    if (!isLogged) {
+      dispatch(getFirstSentence());
+    }
+  }, [isLogged]);
 
   useInterval(() => {
     if (isLogged) {

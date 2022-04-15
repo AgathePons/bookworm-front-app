@@ -1,7 +1,7 @@
-import { SAVE_FIRST_SENTENCE, SAVE_RANDOM_SENTENCE } from '../actions/bookworm';
+import { SAVE_FIRST_SENTENCE, SAVE_RANDOM_SENTENCE, RESET_BOOKWORM_STATE } from '../actions/bookworm';
 
 export const initialState = {
-  messages: [''],
+  messages: [],
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -20,6 +20,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         messages: newMessage,
+      };
+    }
+    case RESET_BOOKWORM_STATE: {
+      return {
+        ...initialState,
       };
     }
     default:
