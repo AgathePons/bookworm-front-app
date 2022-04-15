@@ -26,7 +26,6 @@ export default function Stats({ isOpen }) {
     <div className={isOpen ? 'stats__container' : 'stats__container-hidden'}>
       <StatsKnowledge />
       <div className="stats__container__upgrades">
-        <p className="stat__container__upgrades__name">Upgrades bought:</p>
         <div className="stat__container__upgrades__items">
           {
             (isLogged && clickFlat[0].length !== 0)

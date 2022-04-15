@@ -16,6 +16,7 @@ export default function StatsKnowledge() {
       <p className="stat__container__block__value">{convertToReadable(knowledgePerSecond)}</p>
       <p className="stat__container__block__name">Knowledge per click:</p>
       <p className="stat__container__block__value">{convertToReadable(knowledgePerClick)}</p>
+      <p className="stat__container__block__name">Upgrades bought:</p>
     </div>
   );
 }
