@@ -81,7 +81,7 @@ function App() {
         <Book />
         {(isLogged && isModalOpen) && <LoginModal setIsModalOpen={setIsModalOpen} />}
       </div>
-      <Container visible={visible} handleClick={handleVisible} />
+      <Container visible={visible} setVisible={setVisible} handleClick={handleVisible} />
     </div>
   );
 }

@@ -7,7 +7,7 @@ import QuickShopItem from '../QuickShopItem';
 
 import './style.scss';
 
-export default function QuickShop({ visible, handleClick }) {
+export default function QuickShop({ visible, setVisible, handleClick }) {
   const { generatorsOwned } = useSelector((state) => state.shop);
 
   const {
@@ -25,22 +25,22 @@ export default function QuickShop({ visible, handleClick }) {
       <div className="quickshop__block snaps-inline">
         {
           clickFlat[0].length !== 0
-            ? clickFlat[0].map((e) => <QuickShopItem key={e.id} id={e.id} cost={e.starting_cost} nextCost={e.next_cost} />)
+            ? clickFlat[0].map((e) => <QuickShopItem key={e.id} id={e.id} cost={e.starting_cost} nextCost={e.next_cost} setVisible={setVisible} />)
             : ''
           }
         {
           clickPercent[0].length !== 0
-            ? clickPercent[0].map((e) => <QuickShopItem key={e.id} id={e.id} cost={e.starting_cost} nextCost={e.next_cost} />)
+            ? clickPercent[0].map((e) => <QuickShopItem key={e.id} id={e.id} cost={e.starting_cost} nextCost={e.next_cost} setVisible={setVisible} />)
             : ''
           }
         {
           idleFlat[0].length !== 0
-            ? idleFlat[0].map((e) => <QuickShopItem key={e.id} id={e.id} cost={e.starting_cost} nextCost={e.next_cost} />)
+            ? idleFlat[0].map((e) => <QuickShopItem key={e.id} id={e.id} cost={e.starting_cost} nextCost={e.next_cost} setVisible={setVisible} />)
             : ''
           }
         {
           idlePercent[0].length !== 0
-            ? idlePercent[0].map((e) => <QuickShopItem key={e.id} id={e.id} cost={e.starting_cost} nextCost={e.next_cost} />)
+            ? idlePercent[0].map((e) => <QuickShopItem key={e.id} id={e.id} cost={e.starting_cost} nextCost={e.next_cost} setVisible={setVisible} />)
             : ''
           }
       </div>
@@ -50,5 +50,6 @@ export default function QuickShop({ visible, handleClick }) {
 
 QuickShop.propTypes = {
   visible: PropTypes.bool.isRequired,
+  setVisible: PropTypes.func.isRequired,
   handleClick: PropTypes.func.isRequired,
 };

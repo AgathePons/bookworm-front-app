@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import PropTypes from 'prop-types';
 
-import { getFirstSentence, getRandomSentence } from '../../actions/bookworm';
+import { getFirstSentence, getRandomSentence, readNewNotification } from '../../actions/bookworm';
 
 import useInterval from '../../hooks/useInterval';
 
@@ -23,11 +23,17 @@ export default function Bookworm({ isOpen }) {
     }
   }, [isLogged]);
 
+  useEffect(() => {
+    if (isOpen) {
+      dispatch(readNewNotification());
+    }
+  }, [isOpen]);
+
   useInterval(() => {
     if (isLogged) {
       dispatch(getRandomSentence());
     }
-  }, 1000 * 60 * 15);
+  }, 5000);
 
   return (
     <div className={isOpen ? 'bookworm' : 'bookworm-hidden'}>

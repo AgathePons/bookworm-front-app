@@ -6,7 +6,7 @@ import convertToReadable from '../../selectors';
 import { buyMoreShopItem } from '../../actions/shop';
 
 export default function QuickShopItem({
-  id, nextCost,
+  id, nextCost, setVisible,
 }) {
   const [isBuyable, setIsBuyable] = useState(false);
   const knowledge = useSelector((state) => state.knowledge.knowledge);
@@ -28,6 +28,15 @@ export default function QuickShopItem({
     }
   }, [knowledge]);
 
+  useEffect(() => {
+    if (isBuyable) {
+      setVisible(true);
+    }
+    else {
+      setVisible(false);
+    }
+  }, [isBuyable]);
+
   return (
     <div className={isBuyable ? 'quickshop__block__item' : 'quickshop__block__item is-hidden'} onClick={handleClick}>
       <div className="shopitem__left">
@@ -43,4 +52,5 @@ export default function QuickShopItem({
 QuickShopItem.propTypes = {
   id: PropTypes.number.isRequired,
   nextCost: PropTypes.number.isRequired,
+  setVisible: PropTypes.func.isRequired,
 };

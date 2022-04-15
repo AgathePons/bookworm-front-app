@@ -1,0 +1,21 @@
+.notification {
+}
+
+.notification::after {
+  content:'ee';
+  padding: 0.2rem;
+  border-radius: 50%;
+  color: red;
+  background-color: red;
+  position: relative;
+  left: 35px;
+  bottom: 25px;
+}
+
+@media screen and (min-width: 1366px) {
+  .notification {
+    bottom: 700px;
+    left: auto;
+    right: 10px;
+  }
+}

@@ -14,7 +14,6 @@
 }
 
 .buttons__block > div{
-  background-color: pink;
   padding: 0.5em;
   margin: 0.5em;
 }
@@ -35,7 +34,19 @@
   .buttons__a {
     width: 80px;
     height: 80px;
+    position: relative;
   }
+
+  .notification::after {
+    content:'ee';
+    padding: 0.2rem;
+    border-radius: 50%;
+    color: red;
+    background-color: red;
+    position: absolute;
+    top: 0;
+  }
+    
 
   .buttons__b {
     width: 80px;
@@ -52,3 +63,10 @@
     height: 80px;
   }
 }
+
+/* @media screen and (min-width: 1366px) {
+  .notification {
+    left: -20px;
+    bottom: 0px;
+  }
+} */
