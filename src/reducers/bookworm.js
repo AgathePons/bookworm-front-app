@@ -4,7 +4,7 @@ import {
 
 export const initialState = {
   messages: [],
-  newNotification: false,
+  newNotification: true,
 };
 
 const reducer = (state = initialState, action = {}) => {

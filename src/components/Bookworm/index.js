@@ -24,6 +24,12 @@ export default function Bookworm({ isOpen }) {
   }, [isLogged]);
 
   useEffect(() => {
+    if (isLogged) {
+      dispatch(getRandomSentence());
+    }
+  }, [isLogged]);
+
+  useEffect(() => {
     if (isOpen) {
       dispatch(readNewNotification());
     }
