@@ -1,7 +1,8 @@
-import { CHANGE_USER_FORMS_FIELD, SAVE_USER, RESET_STATE } from 'src/actions/user';
+import { CHANGE_USER_FORMS_FIELD, SAVE_USER, RESET_STATE, CHANGE_IS_REGISTER } from 'src/actions/user';
 
 export const initialState = {
   isLogged: false,
+  isRegister: false,
   loginEmail: 'biglemon@gmail.com',
   loginPassword: '1234',
   email: '',
@@ -14,6 +15,12 @@ export const initialState = {
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
+    case CHANGE_IS_REGISTER: {
+      return {
+        ...state,
+        isRegister: true,
+      };
+    }
     case CHANGE_USER_FORMS_FIELD: {
       return {
         ...state,

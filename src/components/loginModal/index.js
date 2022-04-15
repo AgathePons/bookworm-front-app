@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import convertToReadable from '../../selectors';
 
@@ -28,3 +29,7 @@ export default function LoginModal({ setIsModalOpen }) {
     </div>
   );
 }
+
+LoginModal.propTypes = {
+  setIsModalOpen: PropTypes.func.isRequired,
+};
