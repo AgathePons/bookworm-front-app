@@ -20,6 +20,7 @@ function App() {
   const dispatch = useDispatch();
   const {
     isLogged,
+    isRegister,
   } = useSelector((state) => state.user);
   const [visible, setVisible] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -79,7 +80,7 @@ function App() {
       <div className="app__header">
         <Header />
         <Book />
-        {(isLogged && isModalOpen) && <LoginModal setIsModalOpen={setIsModalOpen} />}
+        {(!isRegister && isLogged && isModalOpen) && <LoginModal setIsModalOpen={setIsModalOpen} />}
       </div>
       <Container visible={visible} setVisible={setVisible} handleClick={handleVisible} />
     </div>
