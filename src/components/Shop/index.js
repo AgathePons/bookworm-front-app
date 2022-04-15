@@ -91,6 +91,7 @@ export default function Shop({ isOpen }) {
                   number={e.number_owned}
                   text={e.text}
                   clickFlat={e.clic_flat_value}
+                  icon={e.icon}
                 />
               ))
             }
@@ -111,6 +112,7 @@ export default function Shop({ isOpen }) {
                         number={e.number_owned}
                         text={e.text}
                         clickFlat={e.clic_flat_value}
+                        icon={e.icon}
                       />
                     );
                   }
@@ -135,6 +137,7 @@ export default function Shop({ isOpen }) {
                   number={e.number_owned}
                   text={e.text}
                   clickPercent={e.clic_percent_value}
+                  icon={e.icon}
                 />
               ))
             }
@@ -155,6 +158,7 @@ export default function Shop({ isOpen }) {
                         number={e.number_owned}
                         text={e.text}
                         clickPercent={e.clic_percent_value}
+                        icon={e.icon}
                       />
                     );
                   }
@@ -179,6 +183,7 @@ export default function Shop({ isOpen }) {
                   number={e.number_owned}
                   text={e.text}
                   idleFlat={e.idle_flat_value}
+                  icon={e.icon}
                 />
               ))
             }
@@ -199,6 +204,7 @@ export default function Shop({ isOpen }) {
                         number={e.number_owned}
                         text={e.text}
                         idleFlat={e.idle_flat_value}
+                        icon={e.icon}
                       />
                     );
                   }
@@ -223,6 +229,7 @@ export default function Shop({ isOpen }) {
                   number={e.number_owned}
                   text={e.text}
                   idlePercent={e.idle_percent_value}
+                  icon={e.icon}
                 />
               ))
             }
@@ -243,6 +250,7 @@ export default function Shop({ isOpen }) {
                         number={e.number_owned}
                         text={e.text}
                         idlePercent={e.idle_percent_value}
+                        icon={e.icon}
                       />
                     );
                   }
