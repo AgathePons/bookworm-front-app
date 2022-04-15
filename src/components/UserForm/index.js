@@ -1,5 +1,10 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { changeUserFormsField, registerUser, login } from 'src/actions/user';
+import {
+  changeUserFormsField,
+  registerUser,
+  login,
+  changeIsRegister,
+} from 'src/actions/user';
 
 // assets import
 import './style.scss';
@@ -27,6 +32,7 @@ export default function UserForm() {
 
   const handleRegisterSubmit = (event) => {
     event.preventDefault();
+    dispatch(changeIsRegister());
     dispatch(registerUser());
   };
 

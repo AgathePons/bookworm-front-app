@@ -8,6 +8,7 @@ export const RESET_STATE = 'RESET_STATE';
 export const SAVE_USER_STATS = 'SAVE_USER_STATS';
 export const DISCONNECT_USER = 'DISCONNECT_USER';
 export const CHECK_USER = 'CHECK_USER';
+export const CHANGE_IS_REGISTER = 'CHANGE_IS_REGISTER';
 
 // Action creators
 export const changeUserFormsField = (value, name) => ({
@@ -47,4 +48,8 @@ export const disconnectUser = () => ({
 
 export const checkUser = () => ({
   type: CHECK_USER,
+});
+
+export const changeIsRegister = () => ({
+  type: CHANGE_IS_REGISTER,
 });
