@@ -9,7 +9,7 @@ import { readNewNotification } from 'src/actions/bookworm';
 // actions import
 
 // assets import
-import './style.css';
+import './style.scss';
 
 export default function Buttons() {
   const dispatch = useDispatch();

@@ -18,6 +18,25 @@
   margin: 0.5em;
 }
 
+.buttons__a {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  &.notification {
+    background-color: chartreuse;
+    &:after {
+      content:'';
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      top: -7px;
+      right: -7px;
+      background-color: red;
+      position: absolute;
+    }
+  }
+}
+
 @media screen and (min-width: 1366px) {
   .buttons {
     width: 100%;
@@ -35,6 +54,7 @@
     width: 80px;
     height: 80px;
     position: relative;
+    
   }
 
   .notification::after {
