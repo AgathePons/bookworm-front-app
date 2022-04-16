@@ -42,7 +42,7 @@
     }
     .shopitem__left {
       .shopitem__left__img {
-        & > svg {
+        & > svg, & > img {
           filter: drop-shadow(-2px 2px #D2FF01) drop-shadow(2px -2px #6cf5c6) drop-shadow(2px 2px #822F8A) drop-shadow(-2px -2px #fff);
         }
       }
@@ -52,7 +52,7 @@
   &.not-buyable:hover {
     .shopitem__left {
       .shopitem__left__img {
-        & > svg {
+        & > svg, & > img {
           filter: drop-shadow(-2px -2px #D2FF01) drop-shadow(2px 2px #6cf5c6) drop-shadow(-2px 2px #822F8A) drop-shadow(2px -2px #fff);
         }
       }
@@ -90,7 +90,7 @@
       background-color: #200220;
       filter: drop-shadow(2px 2px #ffff00);
       overflow: hidden;
-      & > svg {
+      & > svg, & > img {
         fill: #200220;
         width: 40px;
         transition: all .3s cubic-bezier(0.17, 0.84, 0.44, 1);
