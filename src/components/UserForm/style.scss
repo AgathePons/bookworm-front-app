@@ -31,12 +31,17 @@
       linear-gradient(to bottom left, #ff0, #6cf5c6);
     position: relative;
     padding: 1rem;
-
+    transition: all .2s cubic-bezier(0.17, 0.84, 0.44, 1);
     &:hover,
     &:active {
       &:after {
-        box-shadow: 5px 5px 7px;
+        box-shadow: 5px 5px 7px #000;
+        background: linear-gradient(to top right, #6cf5c6, #822F8A);
       }
+    }
+
+    &:active {
+      color: #fff;
     }
 
     &:after {
@@ -51,7 +56,7 @@
       height: 100%;
       background: linear-gradient(to bottom left, #6cf5c6, #822F8A);
       margin-bottom: -2px;
-      box-shadow: 3px 3px 5px #000;
+      box-shadow: 2px 2px 3px #000;
       transition: all .3s cubic-bezier(0.17, 0.84, 0.44, 1);
     }
   }

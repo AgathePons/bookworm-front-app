@@ -52,10 +52,18 @@
           &>svg {
             fill: #fff;
             filter: drop-shadow(2px 2px #200220);
+            transition: all .5s cubic-bezier(0.17, 0.84, 0.44, 1);
           }
         }
         .item-number {
           text-align: center;
+        }
+        &:hover {
+          .item-icon {
+            &>svg {
+              filter: drop-shadow(2px 2px #6cf5c6);
+            }
+          }
         }
       }
     }

@@ -45,12 +45,17 @@
         linear-gradient(to bottom left, #ff0, #6cf5c6);
       position: relative;
       padding: 1rem;
-
+      transition: all .3s cubic-bezier(0.17, 0.84, 0.44, 1);
       &:hover,
       &:active {
         &:after {
-          box-shadow: 5px 5px 7px;
+          box-shadow: 5px 5px 7px #000;
+          background: linear-gradient(to top right, #6cf5c6, #822F8A);
         }
+      }
+
+      &:active {
+        color: #fff;
       }
 
       &:after {
@@ -65,7 +70,7 @@
         height: 100%;
         background: linear-gradient(to bottom left, #6cf5c6, #822F8A);
         margin-bottom: -2px;
-        box-shadow: 3px 3px 5px #000;
+        box-shadow: 2px 2px 3px #000;
         transition: all .3s cubic-bezier(0.17, 0.84, 0.44, 1);
       }
     }
@@ -80,12 +85,16 @@
         linear-gradient(to bottom left, #822F8A, #6cf5c6);
       position: relative;
       padding: 1rem;
-
+      transition: all .3s cubic-bezier(0.17, 0.84, 0.44, 1);
       &:hover,
       &:active {
         &:after {
-          box-shadow: 5px 5px 7px;
+          box-shadow: 5px 5px 7px #000;
+          background: linear-gradient(to top right, #6cf5c6, #822F8A);
         }
+      }
+      &:active {
+        color: #fff;
       }
 
       &:after {
@@ -100,7 +109,7 @@
         height: 100%;
         background: linear-gradient(to bottom left, #6cf5c6, #822F8A);
         margin-bottom: -2px;
-        box-shadow: 3px 3px 5px #000;
+        box-shadow: 2px 2px 3px #000;
         transition: all .3s cubic-bezier(0.17, 0.84, 0.44, 1);
       }
     }
@@ -125,12 +134,16 @@
   font-size: 1.2rem;
   color: #200220;
   .user__form__delete__button {
+    transition: all .3s cubic-bezier(0.17, 0.84, 0.44, 1);
     border: none;
     text-transform: uppercase;
     color: white;
     background-color: #822F8A;
     font-weight: bold;
     padding: 1rem;
+    &:hover {
+      background-color: #200220;
+    }
   }
   .user__form__delete__confirm {
     position: absolute;
@@ -154,6 +167,7 @@
         padding: .5rem;
         border: none;
         color: #fff;
+        transition: all .3s cubic-bezier(0.17, 0.84, 0.44, 1);
         &:not(:last-child) {
           margin-bottom: .5rem;
         }
@@ -162,9 +176,16 @@
         background-color: #fff;
         color: #822f8a;
         border: 1px solid #822f8a;
+        &:hover {
+          color: #200220;
+          border: 1px solid #200220;
+        }
       }
       .button-refuse {
         background-color: #822f8a;
+        &:hover {
+          background-color: #200220;
+        }
       }
     }
   }

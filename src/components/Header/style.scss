@@ -8,10 +8,12 @@
     .header__title {
       font-family: 'Press Start 2P', sans-serif;
       margin-bottom: 1rem;
+      filter: drop-shadow(2px 2px #200220);
     }
     .currency, .currencypersecond {
       font-weight: 700;
       font-size: 1.6rem;
+      filter: drop-shadow(2px 2px #200220);
     }
     .currency {
       margin-bottom: .5rem;

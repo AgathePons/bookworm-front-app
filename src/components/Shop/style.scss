@@ -18,6 +18,7 @@
       width: 40px;
       height: 40px;
       padding: .5rem;
+      transition: all .5s cubic-bezier(0.17, 0.84, 0.44, 1);
       & > svg {
         width: 100%;
         height: 100%;
@@ -50,6 +51,7 @@
       border: none;
       background-color: rgba(32,2,32, .3);
       padding: .3rem;
+      transition: all .5s cubic-bezier(0.17, 0.84, 0.44, 1);
       &:not(:last-child) {
         margin-right: 1rem;
       }
@@ -104,5 +106,21 @@
     margin: 1rem;
     width: auto;
     height: calc(100% - 2rem);
+    .shop__container__tabs {
+      [class^='shop__container__tabs__'] {
+        &:hover {
+          background-color: rgba(32,2,32, 1);
+        }
+      }
+    }
+    .shop__container__nested {
+      .shop__container__nested__tabs {
+        [class^='shop__container__nested__tabs__'] {
+          &:hover {
+            background-color: rgba(32,2,32, 1);
+          }
+        }
+      }
+    }
   }
 }
