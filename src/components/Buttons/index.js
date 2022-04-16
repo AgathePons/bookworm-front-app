@@ -36,7 +36,9 @@ export default function Buttons() {
   return (
     <div className="buttons">
       <div className="buttons__block">
-        <button onClick={handleClick} type="button" className={newNotification ? 'buttons__a notification' : 'buttons__a'} value="bookworm">Bookworm</button> {/* change "value" to modify modal's title */}
+        <button onClick={handleClick} type="button" className={newNotification ? 'buttons__a notification' : 'buttons__a'} value="bookworm">
+          bookworm
+        </button> {/* change "value" to modify modal's title */}
         <button onClick={handleClick} type="button" className="buttons__b" value="user">User</button>
       </div>
       <div className="buttons__block">

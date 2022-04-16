@@ -18,12 +18,20 @@
   margin: 0.5em;
 }
 
-.buttons__a {
+.buttons__a, .buttons__d {
   position: relative;
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  background: none;
+  border: none;
+  &>svg {
+    fill: #ff0;
+    filter: drop-shadow(-3px 3px #200220);
+
+    transform: scale(-1, 1);
+  }
   &.notification {
-    background-color: chartreuse;
     &:after {
       content:'';
       width: 15px;
@@ -31,7 +39,7 @@
       border-radius: 50%;
       top: -7px;
       right: -7px;
-      background-color: red;
+      background-color: #df0b5c;
       position: absolute;
     }
   }
@@ -53,6 +61,7 @@
   .buttons__a {
     width: 80px;
     height: 80px;
+    padding: 1rem;
     position: relative;
     
   }
