@@ -50,6 +50,8 @@
 .book__visual__img {
   width: 50px;
   animation: hover 3s infinite linear;
+  user-select: none;
+  pointer-events:none
 }
 
 @keyframes hover {
