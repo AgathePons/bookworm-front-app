@@ -38,6 +38,7 @@ export default function Stats({ isOpen }) {
                 clickFlat={elem.clic_flat_value}
                 cost={elem.starting_cost}
                 nextCost={elem.next_cost}
+                icon={elem.icon}
               />
             ))
           }
@@ -52,6 +53,7 @@ export default function Stats({ isOpen }) {
                 clickFlat={elem.clic_flat_value}
                 cost={elem.starting_cost}
                 nextCost={elem.next_cost}
+                icon={elem.icon}
               />
             ))
           }
@@ -66,6 +68,7 @@ export default function Stats({ isOpen }) {
                 clickFlat={elem.clic_flat_value}
                 cost={elem.starting_cost}
                 nextCost={elem.next_cost}
+                icon={elem.icon}
               />
             ))
           }
@@ -80,6 +83,7 @@ export default function Stats({ isOpen }) {
                 clickFlat={elem.clic_flat_value}
                 cost={elem.starting_cost}
                 nextCost={elem.next_cost}
+                icon={elem.icon}
               />
             ))
           }
