@@ -59,10 +59,10 @@ StatsItem.propTypes = {
 };
 
 StatsItem.defaultProps = {
-  idleFlat: 0,
-  idlePercent: 0,
-  clickFlat: 0,
-  clickPercent: 0,
   nextCost: 0,
   cost: 0,
+  idleFlat: null,
+  idlePercent: null,
+  clickFlat: null,
+  clickPercent: null,
 };

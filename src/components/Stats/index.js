@@ -50,7 +50,7 @@ export default function Stats({ isOpen }) {
                 number={elem.number_owned}
                 name={elem.name}
                 text={elem.text}
-                clickFlat={elem.clic_flat_value}
+                clickPercent={elem.clic_percent_value}
                 cost={elem.starting_cost}
                 nextCost={elem.next_cost}
                 icon={elem.icon}
@@ -65,7 +65,7 @@ export default function Stats({ isOpen }) {
                 number={elem.number_owned}
                 name={elem.name}
                 text={elem.text}
-                clickFlat={elem.clic_flat_value}
+                idleFlat={elem.idle_flat_value}
                 cost={elem.starting_cost}
                 nextCost={elem.next_cost}
                 icon={elem.icon}
@@ -80,7 +80,7 @@ export default function Stats({ isOpen }) {
                 number={elem.number_owned}
                 name={elem.name}
                 text={elem.text}
-                clickFlat={elem.clic_flat_value}
+                idlePercent={elem.idle_percent_value}
                 cost={elem.starting_cost}
                 nextCost={elem.next_cost}
                 icon={elem.icon}
