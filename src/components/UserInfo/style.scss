@@ -76,13 +76,22 @@
 
       &--clicked {
         background: linear-gradient(to bottom left, rgba(255, 255, 0, 0.5), rgba(130, 47, 138, 0.5));
+        &:hover {
+          cursor: not-allowed;
+          &:after {
+            background: linear-gradient(to bottom left, #6cf5c6, #822F8A);
+            box-shadow: 2px 2px 3px #000;
+          }
+        }
+        &:active {
+          color: #200220;
+        }
       }
     }
 
     .game-saved-message{
       color: white;
       position: relative;
-      bottom: 160px;
     }
 
     .user__form__disconnect__button {

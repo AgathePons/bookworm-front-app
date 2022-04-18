@@ -116,6 +116,7 @@
       & > svg, & > img {
         fill: #200220;
         width: 40px;
+        height: 40px;
         transition: all .3s cubic-bezier(0.17, 0.84, 0.44, 1);
         filter: drop-shadow(-2px -2px #D2FF01) drop-shadow(2px 2px #6cf5c6) drop-shadow(-2px 2px #822F8A) drop-shadow(2px -2px #fff);
       }

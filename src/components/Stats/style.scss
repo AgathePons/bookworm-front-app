@@ -49,10 +49,12 @@
           height: 50px;
           margin: 0.5rem;
           padding: .3rem;
-          &>svg {
+          &>svg, &>img {
             fill: #fff;
-            filter: drop-shadow(2px 2px #200220);
+            filter: brightness(1000) drop-shadow(2px 2px #200220);
             transition: all .5s cubic-bezier(0.17, 0.84, 0.44, 1);
+            height: 100%;
+            width: 100%;
           }
         }
         .item-number {
@@ -60,8 +62,8 @@
         }
         &:hover {
           .item-icon {
-            &>svg {
-              filter: drop-shadow(2px 2px #6cf5c6);
+            &>svg, &>img {
+              filter: brightness(1000) drop-shadow(2px 2px #6cf5c6);
             }
           }
         }
