@@ -30,25 +30,57 @@ export default function Stats({ isOpen }) {
           {
             (isLogged && clickFlat[0].length !== 0)
             && clickFlat[0].map((elem) => (
-              <StatsItem key={uuidv4()} number={elem.number_owned} name={elem.name} text={elem.text} clickFlat={elem.clic_flat_value} />
+              <StatsItem
+                key={uuidv4()}
+                number={elem.number_owned}
+                name={elem.name}
+                text={elem.text}
+                clickFlat={elem.clic_flat_value}
+                cost={elem.starting_cost}
+                nextCost={elem.next_cost}
+              />
             ))
           }
           {
             (isLogged && clickPercent[0].length !== 0)
             && clickPercent[0].map((elem) => (
-              <StatsItem key={uuidv4()} number={elem.number_owned} name={elem.name} text={elem.text} clickPercent={elem.clic_percent_value} />
+              <StatsItem
+                key={uuidv4()}
+                number={elem.number_owned}
+                name={elem.name}
+                text={elem.text}
+                clickFlat={elem.clic_flat_value}
+                cost={elem.starting_cost}
+                nextCost={elem.next_cost}
+              />
             ))
           }
           {
             (isLogged && idleFlat[0].length !== 0)
             && idleFlat[0].map((elem) => (
-              <StatsItem key={uuidv4()} number={elem.number_owned} name={elem.name} text={elem.text} idleFlat={elem.idle_flat_value} />
+              <StatsItem
+                key={uuidv4()}
+                number={elem.number_owned}
+                name={elem.name}
+                text={elem.text}
+                clickFlat={elem.clic_flat_value}
+                cost={elem.starting_cost}
+                nextCost={elem.next_cost}
+              />
             ))
           }
           {
             (isLogged && idlePercent[0].length !== 0)
             && idlePercent[0].map((elem) => (
-              <StatsItem key={uuidv4()} number={elem.number_owned} name={elem.name} text={elem.text} idlePercent={elem.idle_percent_value} />
+              <StatsItem
+                key={uuidv4()}
+                number={elem.number_owned}
+                name={elem.name}
+                text={elem.text}
+                clickFlat={elem.clic_flat_value}
+                cost={elem.starting_cost}
+                nextCost={elem.next_cost}
+              />
             ))
           }
         </div>

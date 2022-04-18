@@ -4,11 +4,18 @@ import { useState } from 'react';
 import ShopItemModal from '../ShopItemModal';
 
 export default function StatsItem({
-  name, text, number, idleFlat, idlePercent, clickFlat, clickPercent,
+  name, text, number, idleFlat, idlePercent, clickFlat, clickPercent, nextCost, cost,
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const handleModal = () => {
     setIsModalOpen(true);
+  };
+
+  const handleCost = () => {
+    if (number > 0) {
+      return nextCost;
+    }
+    return cost;
   };
 
   return (
@@ -23,6 +30,7 @@ export default function StatsItem({
           text={text}
           number={number}
           setIsModalOpen={setIsModalOpen}
+          handleCost={handleCost}
           idleFlat={idleFlat}
           idlePercent={idlePercent}
           clickFlat={clickFlat}
@@ -42,6 +50,8 @@ StatsItem.propTypes = {
   idlePercent: PropTypes.number,
   clickFlat: PropTypes.number,
   clickPercent: PropTypes.number,
+  nextCost: PropTypes.number,
+  cost: PropTypes.number,
 };
 
 StatsItem.defaultProps = {
@@ -49,4 +59,6 @@ StatsItem.defaultProps = {
   idlePercent: 0,
   clickFlat: 0,
   clickPercent: 0,
+  nextCost: 0,
+  cost: 0,
 };
