@@ -1,4 +1,9 @@
-import { CHANGE_USER_FORMS_FIELD, SAVE_USER, RESET_STATE, CHANGE_IS_REGISTER } from 'src/actions/user';
+import {
+  CHANGE_USER_FORMS_FIELD,
+  SAVE_USER,
+  RESET_STATE,
+  CHANGE_IS_REGISTER,
+} from 'src/actions/user';
 
 export const initialState = {
   isLogged: false,

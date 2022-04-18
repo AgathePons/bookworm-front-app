@@ -20,7 +20,7 @@ export default function Buttons() {
   const newNotification = useSelector((state) => state.bookworm.newNotification);
 
   function handleClick(e) {
-    setTitle(e.target.value);
+    setTitle(e.currentTarget.value);
     setIsOpen(true);
     if (title === 'bookworm') {
       dispatch(readNewNotification());

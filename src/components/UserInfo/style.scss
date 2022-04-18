@@ -73,6 +73,16 @@
         box-shadow: 2px 2px 3px #000;
         transition: all .3s cubic-bezier(0.17, 0.84, 0.44, 1);
       }
+
+      &--clicked {
+        background: linear-gradient(to bottom left, rgba(255, 255, 0, 0.5), rgba(130, 47, 138, 0.5));
+      }
+    }
+
+    .game-saved-message{
+      color: white;
+      position: relative;
+      bottom: 160px;
     }
 
     .user__form__disconnect__button {
