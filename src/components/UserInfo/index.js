@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useIntervalWhen } from 'rooks';
+import { useInterval, useIntervalWhen } from 'rooks';
 import { deleteAccount, saveUserStats, disconnectUser } from 'src/actions/user';
 import './style.scss';
 
@@ -8,11 +8,16 @@ function UserInfo() {
   const { pseudo, email } = useSelector((state) => state.user);
   const [isDeleteClicked, setDeleteClicked] = useState(false);
   const [isSaveClicked, setSaveClicked] = useState(false);
+  const [timer, setTimer] = useState(60);
   const dispatch = useDispatch();
 
   useIntervalWhen(() => {
     setSaveClicked(false);
   }, 1000 * 60, isSaveClicked);
+
+  useIntervalWhen(() => {
+    setTimer(timer - 1);
+  }, 1000, isSaveClicked);
 
   function handleDeleteAccount() {
     dispatch(deleteAccount());
@@ -28,6 +33,7 @@ function UserInfo() {
 
   function handleSave() {
     setSaveClicked(true);
+    setTimer(60);
     dispatch(saveUserStats());
   }
 
@@ -46,7 +52,7 @@ function UserInfo() {
       </div>
       <div className="user__form user__form__save">
         <button className={isSaveClicked ? 'user__form__save__button user__form__save__button--clicked' : 'user__form__save__button'} type="button" onClick={isSaveClicked ? null : handleSave}>save</button>
-        {isSaveClicked && <p className="game-saved-message">Game Saved!<br />You will be able to save again in a minute</p>}
+        {isSaveClicked && <p className="game-saved-message">Game Saved!<br />You will be able to save again in {timer}</p>}
         <button className="user__form__disconnect__button" type="button" onClick={handleDisconnect}>disconnect</button>
       </div>
       <div className="user__form user__form__delete">
