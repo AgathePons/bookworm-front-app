@@ -79,6 +79,7 @@
       .shopitem__left__img {
         & > svg {
           filter: drop-shadow(2px 2px #D2FF01) drop-shadow(-2px 2px #822F8A) drop-shadow(2px -2px #fff);
+          height: 64px;
         }
       }
     }
