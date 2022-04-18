@@ -25,22 +25,22 @@ export default function QuickShop({ visible, setVisible, handleClick }) {
       <div className="quickshop__block snaps-inline">
         {
           clickFlat[0].length !== 0
-            ? clickFlat[0].map((e) => <QuickShopItem key={e.id} id={e.id} cost={e.starting_cost} nextCost={e.next_cost} setVisible={setVisible} />)
+            ? clickFlat[0].map((e) => <QuickShopItem key={e.id} id={e.id} cost={e.starting_cost} nextCost={e.next_cost} setVisible={setVisible} icon={e.icon} />)
             : ''
           }
         {
           clickPercent[0].length !== 0
-            ? clickPercent[0].map((e) => <QuickShopItem key={e.id} id={e.id} cost={e.starting_cost} nextCost={e.next_cost} setVisible={setVisible} />)
+            ? clickPercent[0].map((e) => <QuickShopItem key={e.id} id={e.id} cost={e.starting_cost} nextCost={e.next_cost} setVisible={setVisible} icon={e.icon} />)
             : ''
           }
         {
           idleFlat[0].length !== 0
-            ? idleFlat[0].map((e) => <QuickShopItem key={e.id} id={e.id} cost={e.starting_cost} nextCost={e.next_cost} setVisible={setVisible} />)
+            ? idleFlat[0].map((e) => <QuickShopItem key={e.id} id={e.id} cost={e.starting_cost} nextCost={e.next_cost} setVisible={setVisible} icon={e.icon} />)
             : ''
           }
         {
           idlePercent[0].length !== 0
-            ? idlePercent[0].map((e) => <QuickShopItem key={e.id} id={e.id} cost={e.starting_cost} nextCost={e.next_cost} setVisible={setVisible} />)
+            ? idlePercent[0].map((e) => <QuickShopItem key={e.id} id={e.id} cost={e.starting_cost} nextCost={e.next_cost} setVisible={setVisible} icon={e.icon} />)
             : ''
           }
       </div>
