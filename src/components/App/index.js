@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 // action creators import
 import { setDesktopFalse, setDesktopTrue } from 'src/actions/desktop';
-import { checkUser, saveUserStats, disconnectUser } from 'src/actions/user';
+import { saveUserStats, disconnectUser } from 'src/actions/user';
 import useInterval from '../../hooks/useInterval';
 
 // components import
@@ -69,7 +69,8 @@ function App() {
       pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
       if (pressed.join('') === secretCode.join('')) {
         setIsKonami(true);
-      } else {
+      }
+      else {
         setIsKonami(false);
       }
     });
@@ -85,7 +86,6 @@ function App() {
   }, []);
 
   useEffect(() => {
-    dispatch(checkUser());
     if (isLogged) {
       setIsModalOpen(true);
     }
