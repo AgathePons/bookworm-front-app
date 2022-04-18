@@ -18,7 +18,7 @@ export default function Info({ isOpen }) {
       <h2 className="info__container__title">Merci O'clock</h2>
       <p className="info__container__text">
         Merci O'clock, et spécialement tous nos profs ! Noé (chartreuse forever), Ben (on sait pour votre bromance avec Yoan), 
-        Nico, Clem, JS (et sa démo de nunchaku), BigYann (qu'on a jamais vu mais dont on a apprécié le travil sur O'blog)...???
+        Nico, Clem, JS (et sa démo de nunchaku), BigYann (qu'on a jamais vu mais dont on a apprécié le travail sur O'blog)...???
       </p>
       <h2 className="info__container__title">Big up pour Étienne et Gauthier</h2>
       <p className="info__container__text">

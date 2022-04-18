@@ -39,7 +39,7 @@ export default function Bookworm({ isOpen }) {
     if (isLogged) {
       dispatch(getRandomSentence());
     }
-  }, 1000 * 60 * 1);
+  }, 1000 * 60 * 5);
 
   return (
     <div className={isOpen ? 'bookworm' : 'bookworm-hidden'}>
