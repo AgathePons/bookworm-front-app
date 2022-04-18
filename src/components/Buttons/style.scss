@@ -18,7 +18,7 @@
   margin: 0.5em;
 }
 
-.buttons__a, .buttons__d {
+.buttons__a, .buttons__d, .buttons__c, .buttons__b {
   position: relative;
   width: 50px;
   height: 50px;
@@ -58,38 +58,17 @@
     gap: 0.5rem;
   }
 
-  .buttons__a {
+  .buttons__a, .buttons__b, .buttons__c, .buttons__d {
     width: 80px;
     height: 80px;
     padding: 1rem;
     position: relative;
-    
-  }
-
-  .notification::after {
-    content:'ee';
-    padding: 0.2rem;
-    border-radius: 50%;
-    color: red;
-    background-color: red;
-    position: absolute;
-    top: 0;
-  }
-    
-
-  .buttons__b {
-    width: 80px;
-    height: 80px;
-  }
-
-  .buttons__c {
-    width: 80px;
-    height: 80px;
-  }
-
-  .buttons__d {
-    width: 80px;
-    height: 80px;
+    &.notification {
+      &:after {
+        top: 9px;
+        right: 9px;
+      }
+    }
   }
 }
 

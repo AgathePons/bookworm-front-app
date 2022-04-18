@@ -19,7 +19,7 @@ import externalbattery from './external-battery.svg';
 import fingerimplant from './finger-implant.svg';
 import fingertraining from './finger-training.svg';
 import frontlamp from './front-lamp.svg';
-import highteckmouse from './high-teck-mouse.svg';
+import hightechmouse from './high-tech-mouse.svg';
 import icucumber from './i-cucumber.svg';
 import neuralimplant from './neural-implant.svg';
 import opticalfiber from './optical-fiber.svg';
@@ -61,7 +61,7 @@ export const icones = {
   fingerimplant: fingerimplant,
   fingertraining: fingertraining,
   frontlamp: frontlamp,
-  highteckmouse: highteckmouse,
+  hightechmouse: hightechmouse,
   icucumber: icucumber,
   neuralimplant: neuralimplant,
   opticalfiber: opticalfiber,
