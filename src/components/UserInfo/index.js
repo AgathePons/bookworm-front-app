@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useInterval, useIntervalWhen } from 'rooks';
+import { useIntervalWhen } from 'rooks';
 import { deleteAccount, saveUserStats, disconnectUser } from 'src/actions/user';
 import './style.scss';
 

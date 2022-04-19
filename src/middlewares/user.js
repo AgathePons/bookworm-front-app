@@ -11,6 +11,7 @@ import {
 import { resetBookwormState } from 'src/actions/bookworm';
 import { loadAllKnowledgeFromUser, resetKnowledge } from 'src/actions/knowledge';
 import { loadShopContentFromUser, resetShopState } from 'src/actions/shop';
+import { setLoginError, resetError } from 'src/actions/error';
 
 const user = (store) => (next) => (action) => {
   switch (action.type) {
@@ -92,10 +93,13 @@ const user = (store) => (next) => (action) => {
             store.dispatch(loadAllKnowledgeFromUser(response.data.playerSave));
             store.dispatch(loadShopContentFromUser(response.data.playerSave));
             store.dispatch(resetBookwormState());
+            store.dispatch(resetError());
           }
         }
         catch (error) {
-          console.log(error);
+          if (error.response.data.statusCode === 403) {
+            store.dispatch(setLoginError(error.response.data.message));
+          }
         }
       };
 
@@ -126,15 +130,13 @@ const user = (store) => (next) => (action) => {
           // to autolog user when he comes back to the app
 
           // localStorage.setItem('token', response.data.token);
-
           store.dispatch(saveUser(response.data));
           store.dispatch(loadAllKnowledgeFromUser(response.data.playerSave));
           store.dispatch(loadShopContentFromUser(response.data.playerSave));
           store.dispatch(resetBookwormState());
         }
         catch (error) {
-          // TODO
-          console.log(error);
+          store.dispatch(setLoginError(error.response.data.message));
         }
       };
 
