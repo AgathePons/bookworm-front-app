@@ -18,7 +18,7 @@ const shop = (store) => (next) => (action) => {
               authorization: `Bearer ${token}`,
             },
           });
-          console.log(response);
+
           if (response.status === 200) {
             store.dispatch(loadAllKnowledgeFromUser(response.data.playerSave));
             store.dispatch(loadShopContentFromUser(response.data.playerSave));
@@ -48,7 +48,7 @@ const shop = (store) => (next) => (action) => {
               authorization: `Bearer ${token}`,
             },
           });
-          console.log(response);
+
           if (response.status === 200) {
             store.dispatch(loadAllKnowledgeFromUser(response.data.playerSave));
             store.dispatch(loadShopContentFromUser(response.data.playerSave));

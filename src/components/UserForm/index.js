@@ -1,15 +1,19 @@
 import { useSelector, useDispatch } from 'react-redux';
+import { useIntervalWhen } from 'rooks';
 import {
   changeUserFormsField,
   registerUser,
   login,
   changeIsRegister,
 } from 'src/actions/user';
+import { resetError } from 'src/actions/error';
 
 // assets import
 import './style.scss';
 
 export default function UserForm() {
+  const dispatch = useDispatch();
+  const errorMessage = useSelector((state) => state.error.errorMessage);
   const {
     loginEmail,
     loginPassword,
@@ -19,7 +23,9 @@ export default function UserForm() {
     pseudo,
   } = useSelector((state) => state.user);
 
-  const dispatch = useDispatch();
+  useIntervalWhen(() => {
+    dispatch(resetError());
+  }, 3000, errorMessage);
 
   const handleInputChange = (event) => {
     dispatch(changeUserFormsField(event.target.value, event.target.name));
@@ -45,6 +51,7 @@ export default function UserForm() {
           <input type="password" name="loginPassword" className="user__login__form__input" placeholder="password" value={loginPassword} onChange={handleInputChange} />
           <button className="user__login__form__button" type="submit">Submit</button>
         </form>
+        {errorMessage && <p className="login-error">{errorMessage}</p>}
       </div>
       <div className="user__register">
         <div className="user__register__title">register:</div>

@@ -39,7 +39,7 @@ const reducer = (state = initialState, action = {}) => {
     }
     case SAVE_USER: {
       const data = action.payload;
-      console.log(data);
+
       return {
         // TODO !!!
         ...state,

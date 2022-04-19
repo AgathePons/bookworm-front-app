@@ -17,6 +17,7 @@ export default function ShopItem({
   const [isModalOpen, setIsModalOpen] = useState(false);
   const dispatch = useDispatch();
   const knowledge = useSelector((state) => state.knowledge.knowledge);
+
   const handleCost = () => {
     if (number > 0) {
       return nextCost;
@@ -121,7 +122,6 @@ ShopItem.propTypes = {
   idlePercent: PropTypes.number,
   clickFlat: PropTypes.number,
   clickPercent: PropTypes.number,
-
 };
 
 ShopItem.defaultProps = {
