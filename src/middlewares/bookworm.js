@@ -8,7 +8,7 @@ const user = (store) => (next) => (action) => {
     case GET_FIRST_SENTENCE: {
       const fetchFirstSentence = async () => {
         try {
-          const response = await axios.get('http://localhost:8000/api/sentence/first');
+          const response = await axios.get('http://ns3251440.ip-87-98-217.eu:8002/api/sentence/first');
           store.dispatch(saveFirstSentence(response.data));
         }
         catch (error) {
@@ -26,7 +26,7 @@ const user = (store) => (next) => (action) => {
       const { token } = state.user;
       const fetchRandomSentence = async () => {
         try {
-          const response = await axios.get('http://localhost:8000/api/sentence/', {
+          const response = await axios.get('http://ns3251440.ip-87-98-217.eu:8002/api/sentence/', {
             headers: {
               authorization: `Bearer ${token}`,
             },

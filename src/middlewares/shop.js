@@ -10,7 +10,7 @@ const shop = (store) => (next) => (action) => {
       const { knowledge, totalOfClicks } = state.knowledge;
       const buyItem = async () => {
         try {
-          const response = await axios.post(`http://localhost:8000/api/save/item/${action.payload}`, {
+          const response = await axios.post(`http://ns3251440.ip-87-98-217.eu:8002/api/save/item/${action.payload}`, {
             currency: knowledge,
             clickCounter: totalOfClicks,
           }, {
@@ -40,7 +40,7 @@ const shop = (store) => (next) => (action) => {
       const { knowledge, totalOfClicks } = state.knowledge;
       const buyItem = async () => {
         try {
-          const response = await axios.patch(`http://localhost:8000/api/save/item/${action.payload}`, {
+          const response = await axios.patch(`http://ns3251440.ip-87-98-217.eu:8002/api/save/item/${action.payload}`, {
             currency: knowledge,
             clickCounter: totalOfClicks,
           }, {

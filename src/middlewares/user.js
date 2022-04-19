@@ -21,7 +21,7 @@ const user = (store) => (next) => (action) => {
 
       const deleteAccount = async () => {
         try {
-          const response = await axios.delete('http://localhost:8000/api/playerAccount', {
+          const response = await axios.delete('http://ns3251440.ip-87-98-217.eu:8002/playerAccount', {
             headers: {
               authorization: `Bearer ${token}`,
             },
@@ -49,7 +49,7 @@ const user = (store) => (next) => (action) => {
 
       const disconnectUser = async () => {
         try {
-          const response = await axios.patch('http://localhost:8000/api/disconnect', {
+          const response = await axios.patch('http://ns3251440.ip-87-98-217.eu:8002/api/disconnect', {
             currency: knowledge,
             clickCounter: totalOfClicks,
           }, {
@@ -80,7 +80,7 @@ const user = (store) => (next) => (action) => {
 
       const loginUser = async () => {
         try {
-          const response = await axios.post('http://localhost:8000/api/login', {
+          const response = await axios.post('http://ns3251440.ip-87-98-217.eu:8002/api/login', {
             mail: loginEmail,
             password: loginPassword,
           });
@@ -119,7 +119,7 @@ const user = (store) => (next) => (action) => {
 
       const registerUser = async () => {
         try {
-          const response = await axios.post('http://localhost:8000/api/playerAccount', {
+          const response = await axios.post('http://ns3251440.ip-87-98-217.eu:8002/api/playerAccount', {
             username: pseudo,
             mail: email,
             password: password,
@@ -152,7 +152,7 @@ const user = (store) => (next) => (action) => {
 
       const saveUserStats = async () => {
         try {
-          const response = await axios.patch('http://localhost:8000/api/save', {
+          const response = await axios.patch('http://ns3251440.ip-87-98-217.eu:8002/api/save', {
             currency: knowledge,
             clickCounter: totalOfClicks,
           }, {
