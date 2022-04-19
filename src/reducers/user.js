@@ -8,8 +8,8 @@ import {
 export const initialState = {
   isLogged: false,
   isRegister: false,
-  loginEmail: 'biglemon@gmail.com',
-  loginPassword: '1234',
+  loginEmail: '',
+  loginPassword: '',
   email: '',
   password: '',
   passwordConfirm: '',
